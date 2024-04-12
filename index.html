@@ -93,14 +93,19 @@
 											<li><a href="#">Find a Worker <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="404.html">Sign In</a></li>
-													<li><a href="#staticBackdrop" data-bs-toggle="modal">Register</a></li>
+													<li>
+														<a href="#form-worker-seeker">  
+															<button class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-worker-seeker" >REGISTER</button>
+															<i class="fa fa-user" aria-hidden="true"></i>
+														  </a>
+													</li>
 												</ul>
 											</li>
 											<li><a href="#">Find a Job <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="404.html">Sign In</a></li>
 													<li >
-														<a href="#forma">  
+														<a href="#form-job-seeker">  
 														  <button class="btn btn-outline-primary" data-toggle="modal" data-target="#staticBackdrop" >REGISTER</button>
 														  <i class="fa fa-user" aria-hidden="true"></i>
 														</a>
@@ -119,16 +124,180 @@
 			</div>
 			<!--/ End Header Inner -->
 		</header>
-		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">  
+		<div class="modal fade" id="staticBackdrop" >  
 			<div class="modal-dialog">   
 			  <div class="modal-content">
 			  
 				   <div class="modal-header" style="background-color: #f2fcf9;">
 					<h5 class="modal-title" id="staticBackdropLabel">Please sign this form</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
 				  </div>
 				  <div class="modal-body">
-					<form action=""  method="post" class="container" id="forma" enctype="multipart/form-data"> 
+					<form action=""  method="post" class="container" id="form-job-seeker" enctype="multipart/form-data"> 
+						<div class="form-row">
+						  <div class="col-md-4 mb-3">
+							
+							<div class="form-floating">
+							 
+							  <input type="text" name="first_name" class="form-control" id="floatingInput" placeholder="aaaaa" required>
+							  <label for="floatingInput" style="color: black;">First name</label>
+							</div>
+						  </div> 
+						  <div class="col-md-4 mb-3">
+							
+							<div class="form-floating">
+							 
+							  <input type="text" name="last_name"  class="form-control" id="floatingInput" placeholder="aaaaaaa" required>
+							  <label for="floatingInput" style="color: black;">Last name</label>
+							</div>
+						  </div>
+						  <div class="col-md-4 mb-3">
+							
+							<div class="form-floating">
+							 
+							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="88888888" pattern="\d{8}" required>
+							  <label for="floatingInput" style="color: black;">Phone number</label>
+							</div>
+						  </div>
+						</div>
+						<div class="form-row">
+						  <div class="col-md-6 mb-3">
+							<div class="form-floating">
+							<input name="university" type="text" class="form-control" id="floatingInput" placeholder="name" required>
+							<label for="floatingInput" style="color: black;">University</label>
+						  </div>
+						</div>
+						  <div class="col-md-6 mb-3">
+							<div class="form-floating">
+							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="name" required>
+							<label for="floatingInput" style="color: black;">City</label>
+						  </div>
+						</div>
+						
+						
+					  <div class="col-md-12 mb-3">
+						<div class="form-floating">
+						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+						<label for="floatingInput" style="color: black;">E-mail address</label>
+					  </div></div>
+					  <div class="col-md-12 mb-3">
+						<div class="form-container">
+						  <label for="CV">Please drop your CV</label>
+						  <input name="file" type="file" class="form-control" id="file" accept=".pdf" required>
+						  <small id="CVHelp" class="form-text text-muted">Please upload your CV in PDF format, with a maximum file size of 2MB.</small>
+						</div>
+					</div>
+						
+						</div>
+						<div class="container">
+							  <div class="text-right">
+							
+							   <button name="registrer" class="btn btn-outline-primary mt-3 " >Register</button>
+						   
+							  </div>
+							</div>
+					  </form>
+				  </div>  
+				  
+					
+				  </div>
+				  
+				</div>
+			  </div>
+			
+		<!-- End Header Area -->
+		<div class="modal fade" id="modal-worker-seeker" >  
+			<div class="modal-dialog">   
+			  <div class="modal-content">
+			  
+				   <div class="modal-header" style="background-color: #f2fcf9;">
+					<h5 class="modal-title" id="staticBackdropLabel">Please sign this form</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
+				  </div>
+				  <div class="modal-body">
+					<form action=""  method="post" class="container" id="form-job-seeker" enctype="multipart/form-data"> 
+						<div class="form-row">
+						  <div class="col-md-4 mb-3">
+							
+							<div class="form-floating">
+							 
+							  <input type="text" name="first_name" class="form-control" id="floatingInput" placeholder="aaaaa" required>
+							  <label for="floatingInput" style="color: black;">First name</label>
+							</div>
+						  </div> 
+						  <div class="col-md-4 mb-3">
+							
+							<div class="form-floating">
+							 
+							  <input type="text" name="last_name"  class="form-control" id="floatingInput" placeholder="aaaaaaa" required>
+							  <label for="floatingInput" style="color: black;">Last name</label>
+							</div>
+						  </div>
+						  <div class="col-md-4 mb-3">
+							
+							<div class="form-floating">
+							 
+							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="88888888" pattern="\d{8}" required>
+							  <label for="floatingInput" style="color: black;">Phone number</label>
+							</div>
+						  </div>
+						</div>
+						<div class="form-row">
+						  <div class="col-md-6 mb-3">
+							<div class="form-floating">
+							<input name="university" type="text" class="form-control" id="floatingInput" placeholder="name" required>
+							<label for="floatingInput" style="color: black;">University</label>
+						  </div>
+						</div>
+						  <div class="col-md-6 mb-3">
+							<div class="form-floating">
+							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="name" required>
+							<label for="floatingInput" style="color: black;">City</label>
+						  </div>
+						</div>
+						
+						
+					  <div class="col-md-12 mb-3">
+						<div class="form-floating">
+						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+						<label for="floatingInput" style="color: black;">E-mail address</label>
+					  </div></div>
+					  <div class="col-md-12 mb-3">
+						<div class="form-container">
+						  <label for="CV">Please drop your CV</label>
+						  <input name="file" type="file" class="form-control" id="file" accept=".pdf" required>
+						  <small id="CVHelp" class="form-text text-muted">Please upload your CV in PDF format, with a maximum file size of 2MB.</small>
+						</div>
+					</div>
+						
+						</div>
+						<div class="container">
+							  <div class="text-right">
+							
+							   <button name="registrer" class="btn btn-outline-primary mt-3 " >Register</button>
+						   
+							  </div>
+							</div>
+					  </form>
+				  </div>  
+				  
+					
+				  </div>
+				  
+				</div>
+			  </div>
+			
+
+<div class="modal fade" id="staticBackdrop" >  
+			<div class="modal-dialog">   
+			  <div class="modal-content">
+			  
+				   <div class="modal-header" style="background-color: #f2fcf9;">
+					<h5 class="modal-title" id="staticBackdropLabel">Please sign this form</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
+				  </div>
+				  <div class="modal-body">
+					<form action=""  method="post" class="container" id="form-job-seeker" enctype="multipart/form-data"> 
 						<div class="form-row">
 						  <div class="col-md-4 mb-3">
 							
@@ -200,8 +369,11 @@
 				</div>
 			  </div>
 			</div>
-		<!-- End Header Area -->
-		
+
+
+
+
+
 		<!-- Slider Area -->
 		<section class="slider">
 			<div class="hero-slider">
