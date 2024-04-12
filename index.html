@@ -139,7 +139,7 @@
 							
 							<div class="form-floating">
 							 
-							  <input type="text" name="first_name" class="form-control" id="floatingInput" placeholder="aaaaa" required>
+							  <input type="text" name="first_name" class="form-control" id="floatingInput" placeholder="first_name" required>
 							  <label for="floatingInput" style="color: black;">First name</label>
 							</div>
 						  </div> 
@@ -147,7 +147,7 @@
 							
 							<div class="form-floating">
 							 
-							  <input type="text" name="last_name"  class="form-control" id="floatingInput" placeholder="aaaaaaa" required>
+							  <input type="text" name="last_name"  class="form-control" id="floatingInput" placeholder="last_name" required>
 							  <label for="floatingInput" style="color: black;">Last name</label>
 							</div>
 						  </div>
@@ -155,36 +155,36 @@
 							
 							<div class="form-floating">
 							 
-							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="88888888" pattern="\d{8}" required>
+							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="phone_number" pattern="\d{8}" required>
 							  <label for="floatingInput" style="color: black;">Phone number</label>
 							</div>
 						  </div>
 						</div>
 						<div class="form-row">
+						  
 						  <div class="col-md-6 mb-3">
 							<div class="form-floating">
-							<input name="university" type="text" class="form-control" id="floatingInput" placeholder="name" required>
-							<label for="floatingInput" style="color: black;">University</label>
-						  </div>
-						</div>
-						  <div class="col-md-6 mb-3">
-							<div class="form-floating">
-							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="name" required>
+							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="city" required>
 							<label for="floatingInput" style="color: black;">City</label>
 						  </div>
 						</div>
-						
-						
+					 
 					  <div class="col-md-12 mb-3">
 						<div class="form-floating">
-						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="email" required>
 						<label for="floatingInput" style="color: black;">E-mail address</label>
 					  </div></div>
 					  <div class="col-md-12 mb-3">
+						<div class="form-floating">
+						<input name="password" type="password" class="form-control" id="floatingInput" placeholder="password" required>
+						<label for="floatingInput" style="color: black;">Password</label>
+					  </div>
+					</div>
+					  <div class="col-md-12 mb-3">
 						<div class="form-container">
-						  <label for="CV">Please drop your CV</label>
+						  <label for="cin">Please drop your CIN photo</label>
 						  <input name="file" type="file" class="form-control" id="file" accept=".pdf" required>
-						  <small id="CVHelp" class="form-text text-muted">Please upload your CV in PDF format, with a maximum file size of 2MB.</small>
+						  <small id="CIN" class="form-text text-muted">Please upload your CIN in PDF format, with a maximum file size of 2MB.</small>
 						</div>
 					</div>
 						
@@ -217,41 +217,48 @@
 				  <div class="modal-body">
 					<form action=""  method="post" class="container" id="form-job-seeker" enctype="multipart/form-data"> 
 						<div class="form-row">
+							<div class="col-md-4 mb-3">
+							
+								<div class="form-floating">
+								 
+								  <input type="text" name="full_name" class="form-control" id="floatingInput" placeholder="full_name" required>
+								  <label for="floatingInput" style="color: black;">Full name</label>
+								</div>
+							  </div> 
+						</div>
+						<div class="form-row">
+
 						  <div class="col-md-4 mb-3">
 							
 							<div class="form-floating">
 							 
-							  <input type="text" name="first_name" class="form-control" id="floatingInput" placeholder="aaaaa" required>
-							  <label for="floatingInput" style="color: black;">First name</label>
+							  <input type="text" name="manager_first_name" class="form-control" id="floatingInput" placeholder="manager_first_name" required>
+							  <label for="floatingInput" style="color: black;">Manager First name</label>
 							</div>
 						  </div> 
+
 						  <div class="col-md-4 mb-3">
 							
 							<div class="form-floating">
 							 
-							  <input type="text" name="last_name"  class="form-control" id="floatingInput" placeholder="aaaaaaa" required>
-							  <label for="floatingInput" style="color: black;">Last name</label>
+							  <input type="text" name="manager_last_name"  class="form-control" id="floatingInput" placeholder="last_name" required>
+							  <label for="floatingInput" style="color: black;">Manager Last name</label>
 							</div>
 						  </div>
 						  <div class="col-md-4 mb-3">
 							
 							<div class="form-floating">
 							 
-							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="88888888" pattern="\d{8}" required>
+							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="phone_number" pattern="\d{8}" required>
 							  <label for="floatingInput" style="color: black;">Phone number</label>
 							</div>
 						  </div>
 						</div>
 						<div class="form-row">
+						  
 						  <div class="col-md-6 mb-3">
 							<div class="form-floating">
-							<input name="university" type="text" class="form-control" id="floatingInput" placeholder="name" required>
-							<label for="floatingInput" style="color: black;">University</label>
-						  </div>
-						</div>
-						  <div class="col-md-6 mb-3">
-							<div class="form-floating">
-							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="name" required>
+							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="city" required>
 							<label for="floatingInput" style="color: black;">City</label>
 						  </div>
 						</div>
@@ -259,15 +266,23 @@
 						
 					  <div class="col-md-12 mb-3">
 						<div class="form-floating">
-						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="mail" required>
 						<label for="floatingInput" style="color: black;">E-mail address</label>
 					  </div></div>
 					  <div class="col-md-12 mb-3">
+						<div class="form-floating">
+						<input name="password" type="password" class="form-control" id="floatingInput" placeholder="password" required>
+						<label for="floatingInput" style="color: black;">Password</label>
+					  </div>
+					</div>
+					<div class="col-md-12 mb-3">
 						<div class="form-container">
-						  <label for="CV">Please drop your CV</label>
+						  <label for="cin">Please drop the Manager CIN photo</label>
 						  <input name="file" type="file" class="form-control" id="file" accept=".pdf" required>
-						  <small id="CVHelp" class="form-text text-muted">Please upload your CV in PDF format, with a maximum file size of 2MB.</small>
+						  <small id="Manager-CIN" class="form-text text-muted">Please upload your CIN in PDF format, with a maximum file size of 2MB.</small>
 						</div>
+					</div>
+						
 					</div>
 						
 						</div>
@@ -288,87 +303,7 @@
 			  </div>
 			
 
-<div class="modal fade" id="staticBackdrop" >  
-			<div class="modal-dialog">   
-			  <div class="modal-content">
-			  
-				   <div class="modal-header" style="background-color: #f2fcf9;">
-					<h5 class="modal-title" id="staticBackdropLabel">Please sign this form</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
-				  </div>
-				  <div class="modal-body">
-					<form action=""  method="post" class="container" id="form-job-seeker" enctype="multipart/form-data"> 
-						<div class="form-row">
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input type="text" name="first_name" class="form-control" id="floatingInput" placeholder="aaaaa" required>
-							  <label for="floatingInput" style="color: black;">First name</label>
-							</div>
-						  </div> 
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input type="text" name="last_name"  class="form-control" id="floatingInput" placeholder="aaaaaaa" required>
-							  <label for="floatingInput" style="color: black;">Last name</label>
-							</div>
-						  </div>
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="88888888" pattern="\d{8}" required>
-							  <label for="floatingInput" style="color: black;">Phone number</label>
-							</div>
-						  </div>
-						</div>
-						<div class="form-row">
-						  <div class="col-md-6 mb-3">
-							<div class="form-floating">
-							<input name="university" type="text" class="form-control" id="floatingInput" placeholder="name" required>
-							<label for="floatingInput" style="color: black;">University</label>
-						  </div>
-						</div>
-						  <div class="col-md-6 mb-3">
-							<div class="form-floating">
-							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="name" required>
-							<label for="floatingInput" style="color: black;">City</label>
-						  </div>
-						</div>
-						
-						
-					  <div class="col-md-12 mb-3">
-						<div class="form-floating">
-						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-						<label for="floatingInput" style="color: black;">E-mail address</label>
-					  </div></div>
-					  <div class="col-md-12 mb-3">
-						<div class="form-container">
-						  <label for="CV">Please drop your CV</label>
-						  <input name="file" type="file" class="form-control" id="file" accept=".pdf" required>
-						  <small id="CVHelp" class="form-text text-muted">Please upload your CV in PDF format, with a maximum file size of 2MB.</small>
-						</div>
-					</div>
-						
-						</div>
-						<div class="container">
-							  <div class="text-right">
-							
-							   <button name="registrer" class="btn btn-outline-primary mt-3 " >Register</button>
-						   
-							  </div>
-							</div>
-					  </form>
-				  </div>  
-				  
-					
-				  </div>
-				  
-				</div>
-			  </div>
-			</div>
+
 
 
 
