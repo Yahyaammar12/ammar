@@ -8,10 +8,10 @@ $password  ="";
 if (isset($_POST['registrer'])){
    
     $phone_number=$_POST["phone_number"];
-    $target2="lesCINSworkers/".$phone_number.'-'.basename($_FILES['cin']['name']);
-    $target="lesCVS/".$phone_number.'-'.basename($_FILES['cv']['name']);
+    $target2="lesCINSgerants/".$phone_number.'-'.basename($_FILES['man_cin']['name']);
+    
 
-// }
+
 $conn=mysqli_connect( hostname: $host, 
                 database: $dbname,
                 password: $password, 
@@ -21,22 +21,22 @@ if(mysqli_connect_errno()){
     die("Connection error: " .mysqli_connect_errno());
 }
 
-$pname=$phone_number."-".$_FILES["cin"]["name"];
-$pname2=$phone_number."-".$_FILES["cv"]["name"];
-$first_name=$_POST["first_name"];
-$last_name=$_POST["last_name"];
+$pname=$phone_number."-".$_FILES["man_cin"]["name"];
+$full_name=$_POST["full_name"];
+$manager_first_name=$_POST["manager_first_name"];
+$manager_last_name=$_POST["manager_last_name"];
 $email=$_POST["email"];
 $pass=$_POST["password"];
 $city=$_POST["city"];
 
-$sql= "INSERT INTO registration (first_name, last_name, phone_number, city, mot_de_passe, email,cin_image,CV)
-        VALUES ('$first_name','$last_name','$phone_number','$city','$pass','$email','$pname','$pname2')";
+$sql= "INSERT INTO reg_seeker (full_name, phone_number,email, mot_de_passe, city, manager_first_name, manager_last_name,manager_cin_image)
+        VALUES ('$full_name','$phone_number','$email','$pass','$city','$manager_first_name','$manager_last_name','$pname')";
         
 $stmt = mysqli_stmt_init($conn);
 mysqli_query($conn,$sql);
 
-move_uploaded_file($_FILES['cv']['tmp_name'],$target); 
-move_uploaded_file($_FILES['cin']['tmp_name'],$target2);
+
+move_uploaded_file($_FILES['man_cin']['tmp_name'],$target2);
 }
 
 
