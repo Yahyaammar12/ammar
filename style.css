@@ -963,6 +963,12 @@ body{
 /*===================
 	Why choose CSS
 =====================*/
+.khedma-word{
+	font-family: "Reem Kufi Fun", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: <weight>;
+	font-style: normal;
+  }
 .why-choose .choose-left h3{
 	font-size:24px;
 	font-weight:600;

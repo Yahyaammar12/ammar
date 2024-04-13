@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
 		<!-- Title -->
-        <title><span class="khedma-word">خدمة</span></title>
+        <title>خدمة</title>
 		
 		<!-- Favicon -->
         <link rel="icon" href="img/favicon.png">
@@ -41,9 +41,6 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/responsive.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap" rel="stylesheet">
 		
     </head>
     <body>
@@ -91,25 +88,20 @@
 													<li><a href="index.html">Home Page 1</a></li>
 												</ul>
 											</li>
-											<li><a href="/#">Categories </a></li>
-											<li><a href="../projetWeb 1/projects.html">Projects </a></li>
+											<li><a href="#">Categories </a></li>
+											<li><a href="/projects.html">Projects </a></li>
 											<li><a href="#">Find a Worker <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="404.html">Sign In</a></li>
-													<li>
-														<a href="#form-worker-seeker">  
-															<button class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-worker-seeker" >REGISTER</button>
-															<i class="fa fa-user" aria-hidden="true"></i>
-														  </a>
-													</li>
+													<li><a href="#staticBackdrop" data-bs-toggle="modal">Register</a></li>
 												</ul>
 											</li>
 											<li><a href="#">Find a Job <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="404.html">Sign In</a></li>
 													<li >
-														<a href="#form-job-seeker">  
-														  <button class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-job-seeker" >REGISTER</button>
+														<a href="#forma">  
+														  <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >REGISTER</button>
 														  <i class="fa fa-user" aria-hidden="true"></i>
 														</a>
 													  </li></ul>
@@ -127,22 +119,22 @@
 			</div>
 			<!--/ End Header Inner -->
 		</header>
-		<div class="modal fade" id="modal-job-seeker" >  
+		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">  
 			<div class="modal-dialog">   
 			  <div class="modal-content">
 			  
 				   <div class="modal-header" style="background-color: #f2fcf9;">
 					<h5 class="modal-title" id="staticBackdropLabel">Please sign this form</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				  </div>
 				  <div class="modal-body">
-					<form action="./formulaireworker.php"  method="post" class="container" id="form-job-seeker" enctype="multipart/form-data"> 
+					<form action=""  method="post" class="container" id="forma" enctype="multipart/form-data"> 
 						<div class="form-row">
 						  <div class="col-md-4 mb-3">
 							
 							<div class="form-floating">
 							 
-							  <input type="text" name="first_name" class="form-control" id="floatingInput" placeholder="first_name" required>
+							  <input type="text" name="first_name" class="form-control" id="floatingInput" placeholder="aaaaa" required>
 							  <label for="floatingInput" style="color: black;">First name</label>
 							</div>
 						  </div> 
@@ -150,7 +142,7 @@
 							
 							<div class="form-floating">
 							 
-							  <input type="text" name="last_name"  class="form-control" id="floatingInput" placeholder="last_name" required>
+							  <input type="text" name="last_name"  class="form-control" id="floatingInput" placeholder="aaaaaaa" required>
 							  <label for="floatingInput" style="color: black;">Last name</label>
 							</div>
 						  </div>
@@ -158,117 +150,21 @@
 							
 							<div class="form-floating">
 							 
-							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="phone_number" pattern="\d{8}" required>
+							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="88888888" pattern="\d{8}" required>
 							  <label for="floatingInput" style="color: black;">Phone number</label>
 							</div>
 						  </div>
 						</div>
 						<div class="form-row">
-						  
 						  <div class="col-md-6 mb-3">
 							<div class="form-floating">
-							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="city" required>
-							<label for="floatingInput" style="color: black;">City</label>
+							<input name="university" type="text" class="form-control" id="floatingInput" placeholder="name" required>
+							<label for="floatingInput" style="color: black;">University</label>
 						  </div>
 						</div>
-					 
-					  <div class="col-md-12 mb-3">
-						<div class="form-floating">
-						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="email" required>
-						<label for="floatingInput" style="color: black;">E-mail address</label>
-					  </div></div>
-					  <div class="col-md-12 mb-3">
-						<div class="form-floating">
-						<input name="password" type="text" class="form-control" id="floatingInput" placeholder="password" required>
-						<label for="floatingInput" style="color: black;">Password</label>
-					  </div>
-					</div>
-					  <div class="col-md-12 mb-3">
-						<div class="form-container">
-						  <label for="cin">Please drop your CIN image in PDF format</label>
-						  <input name="cin" type="file" class="form-control" id="cin" accept=".pdf" required>
-						  <small id="cin" class="form-text text-muted">Please upload your CIN image in PDF format, with a maximum file size of 2MB.</small>
-						</div>
-					</div>
-					<div class="col-md-12 mb-3">
-						<div class="form-container">
-						  <label for="cv">If you a CV Please drop it in PDF format</label>
-						  <input name="cv" type="file" class="form-control" id="cv" accept=".pdf" required>
-						  <small id="cv" class="form-text text-muted">Please upload your CV in PDF format, with a maximum file size of 2MB.</small>
-						</div>
-					</div>
-						
-						</div>
-						<div class="container">
-							  <div class="text-right">
-							
-							   <button name="registrer" class="btn btn-outline-primary mt-3 " >Register</button>
-						   
-							  </div>
-							</div>
-					  </form>
-				  </div>  
-				  
-					
-				  </div>
-				  
-				</div>
-			  </div>
-			
-		<!-- End Header Area -->
-		<div class="modal fade" id="modal-worker-seeker" >  
-			<div class="modal-dialog">   
-			  <div class="modal-content">
-			  
-				   <div class="modal-header" style="background-color: #f2fcf9;">
-					<h5 class="modal-title" id="staticBackdropLabel">Please sign this form</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
-				  </div>
-				  <div class="modal-body">
-					<form action=""  method="post" class="container" id="form-worker-seeker" enctype="multipart/form-data"> 
-						<div class="form-row">
-							<div class="col-md-4 mb-3">
-							
-								<div class="form-floating">
-								 
-								  <input type="text" name="full_name" class="form-control" id="floatingInput" placeholder="full_name" required>
-								  <label for="floatingInput" style="color: black;">Full name</label>
-								</div>
-							  </div> 
-						</div>
-						<div class="form-row">
-
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input type="text" name="manager_first_name" class="form-control" id="floatingInput" placeholder="manager_first_name" required>
-							  <label for="floatingInput" style="color: black;">Manager First name</label>
-							</div>
-						  </div> 
-
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input type="text" name="manager_last_name"  class="form-control" id="floatingInput" placeholder="last_name" required>
-							  <label for="floatingInput" style="color: black;">Manager Last name</label>
-							</div>
-						  </div>
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="phone_number" pattern="\d{8}" required>
-							  <label for="floatingInput" style="color: black;">Phone number</label>
-							</div>
-						  </div>
-						</div>
-						<div class="form-row">
-						  
 						  <div class="col-md-6 mb-3">
 							<div class="form-floating">
-							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="city" required>
+							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="name" required>
 							<label for="floatingInput" style="color: black;">City</label>
 						  </div>
 						</div>
@@ -276,23 +172,15 @@
 						
 					  <div class="col-md-12 mb-3">
 						<div class="form-floating">
-						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="mail" required>
+						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
 						<label for="floatingInput" style="color: black;">E-mail address</label>
 					  </div></div>
 					  <div class="col-md-12 mb-3">
-						<div class="form-floating">
-						<input name="password" type="password" class="form-control" id="floatingInput" placeholder="password" required>
-						<label for="floatingInput" style="color: black;">Password</label>
-					  </div>
-					</div>
-					<div class="col-md-12 mb-3">
 						<div class="form-container">
-						  <label for="cin">Please drop the Manager CIN photo</label>
+						  <label for="CV">Please drop your CV</label>
 						  <input name="file" type="file" class="form-control" id="file" accept=".pdf" required>
-						  <small id="Manager-CIN" class="form-text text-muted">Please upload your CIN in PDF format, with a maximum file size of 2MB.</small>
+						  <small id="CVHelp" class="form-text text-muted">Please upload your CV in PDF format, with a maximum file size of 2MB.</small>
 						</div>
-					</div>
-						
 					</div>
 						
 						</div>
@@ -311,14 +199,9 @@
 				  
 				</div>
 			  </div>
-			
-
-
-
-
-
-
-
+			</div>
+		<!-- End Header Area -->
+		
 		<!-- Slider Area -->
 		<section class="slider">
 			<div class="hero-slider">
@@ -328,7 +211,7 @@
 						<div class="row">
 							<div class="col-lg-7">
 								<div class="text m-5">
-									<h1>Connecting talents with opportunities, bridging dreams with realities. Welcome to  <span class="khedma-word">خدمة</span>, where every service finds its match. <span>Trust!</span></h1>
+									<h1>Connecting talents with opportunities, bridging dreams with realities. Welcome to  <span>خدمة</span>, where every service finds its match. <span>Trust!</span></h1>
 									<p> </p>
 									<div class="button">
 										<a href="#" class="btn">Find a Worker</a>
@@ -346,7 +229,7 @@
 						<div class="row">
 							<div class="col-lg-7">
 								<div class="text m-5">
-									<h1>Empowering connections, transforming services. Welcome to  <span class="khedma-word">خدمة</span>  Services That You Can <span>Trust!</span></h1>
+									<h1>Empowering connections, transforming services. Welcome to  <span>خدمة </span> Services That You Can <span>Trust!</span></h1>
 									<p> </p>
 									<div class="button">
 										<a href="#" class="btn">Find a Worker</a>
@@ -502,7 +385,7 @@
 							<i class="icofont icofont-user-alt-3"></i>
 							<div class="content">
 								<span class="counter">3468</span>
-								<p>Employers</p>
+								<p>Employers Worldwide</p>
 							</div>
 						</div>
 						<!-- End Single Fun -->
@@ -513,7 +396,7 @@
 							<i class="icofont-money-bag"></i>
 							<div class="content">
 								
-									<span class="counter">5000</span><span>DT</span>
+									<span class="counter">5000</span><span>$</span>
 								
 								<p>Paid Invoices</p>
 							</div>
@@ -525,7 +408,7 @@
 						<div class="single-fun">
 							<i class="icofont-money"></i>
 							<div class="content">
-								<span class="counter">4379</span><span>DT</span>
+								<span class="counter">4379</span><span>$</span>
 								<p>Paid to Workers</p>
 							</div>
 						</div>
@@ -564,7 +447,7 @@
 						<!-- Start Choose Left -->
 						<div class="choose-left">
 							<h3>Who We Are</h3>
-							<p> Welcome to <span class="khedma-word">خدمة</span> - your destination for seamless connections between job seekers and employers. Whether you're a professional seeking new opportunities or a company searching for top talent, our platform provides the perfect space to bridge the gap. Join us as we navigate the realms of employment together, creating pathways to success and fulfillment, no matter where you are in your journey.</p>
+							<p> Welcome to خدمة - your destination for seamless connections between job seekers and employers. Whether you're a professional seeking new opportunities or a company searching for top talent, our platform provides the perfect space to bridge the gap. Join us as we navigate the realms of employment together, creating pathways to success and fulfillment, no matter where you are in your journey.</p>
 							<p> </p>
 							
 						</div>
@@ -736,7 +619,7 @@
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
 								<h2>About Us</h2>
-								<p>At <span class="khedma-word">خدمة</span>, we're dedicated to connecting people and businesses seamlessly. Our platform simplifies the job search process and empowers businesses to find the right talent. Join us in shaping the future of work.</p>
+								<p>At خدمة, we're dedicated to connecting people and businesses seamlessly. Our platform simplifies the job search process and empowers businesses to find the right talent. Join us in shaping the future of work.</p>
 								<!-- Social -->
 								<ul class="social">
 									<li><a href="#"><i class="icofont-facebook"></i></a></li>
@@ -756,7 +639,7 @@
 										<ul>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Categories</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Projects</a></li>	
+											<li><a href=""><i class="fa fa-caret-right" aria-hidden="true"></i>Projects</a></li>	
 										</ul>
 									</div>
 									
@@ -783,46 +666,6 @@
 		</footer>
 		<!--/ End Footer Area -->
 		
-
-
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModal">
-  Sign Up
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- Sign Up form -->
-        <form>
-          <div class="mb-3">
-            <label for="signupEmail" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp" required>
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-          </div>
-          <div class="mb-3">
-            <label for="signupPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="signupPassword" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Sign Up</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 		<!-- jquery Min JS -->
         <script src="js/jquery.min.js"></script>
 		<!-- jquery Migrate JS -->
