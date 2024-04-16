@@ -95,23 +95,23 @@
 											<li><a href="../projetWeb 1/projects.html">Projects </a></li>
 											<li><a href="#">Find a Worker <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
-													<li><a href="404.html">Sign In</a></li>
+													<li><button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-login" >LOGIN</button></li>
 													<li>
-														<a href="#form-worker-seeker">  
-															<button class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-worker-seeker" >REGISTER</button>
+														 
+															<button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-worker-seeker" >REGISTER</button>
 															<i class="fa fa-user" aria-hidden="true"></i>
-														  </a>
+														 
 													</li>
 												</ul>
 											</li>
 											<li><a href="#">Find a Job <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
-													<li><a href="404.html">Sign In</a></li>
+													<li><button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-login" >LOGIN</button></li>
 													<li >
-														<a href="#form-job-seeker">  
-														  <button class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-job-seeker" >REGISTER</button>
+														
+														  <button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-job-seeker" >REGISTER</button>
 														  <i class="fa fa-user" aria-hidden="true"></i>
-														</a>
+														
 													  </li></ul>
 											</li>
 											<li><a href="contact.html">Contact Us</a></li>
@@ -127,6 +127,86 @@
 			</div>
 			<!--/ End Header Inner -->
 		</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="modal fade" id="modal-login" >  
+			<div class="modal-dialog mb-5">   
+			  <div class="modal-content">
+			  
+				   <div class="modal-header" style="background-color: #f2fcf9;">
+					<h5 class="modal-title" id="staticBackdropLabel">Please login</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
+				  </div>
+				  <div class="modal-body">
+					<form action="./loginworker.php"  method="post" class="container" id="form-login" enctype="multipart/form-data"> 
+						<div class="form-row">
+						  <div class="col-md-4 mb-3">
+							
+							<div class="form-floating">
+								<label for="email" style="color: black;">Email</label>
+							  <input type="text" name="email" class="form-control" id="email" placeholder="email" required>
+							  
+							</div>
+						  </div> 
+						  <div class="col-md-4 mb-3">
+							
+							<div class="form-floating">
+								<label for="password" style="color: black;">PASSWORD</label>
+							  <input type="text" name="password"  class="form-control" id="password" placeholder="password" required>
+							  
+							</div>
+						  </div>
+						 
+						</div>
+						
+					 
+					  
+						
+						</div>
+						<div class="container mb-5">
+							  <div class="text-right">
+							
+							   <button name="login" class="btn btn-outline-primary mt-3 " >Login</button>
+						   
+							  </div>
+							</div>
+					  </form>
+				  </div>  
+				  
+					
+				  </div>
+				  
+				</div>
+			  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<div class="modal fade" id="modal-job-seeker" >  
 			<div class="modal-dialog">   
 			  <div class="modal-content">
