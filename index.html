@@ -48,6 +48,10 @@
     </head>
     <body>
 	
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+		
+  
 		<!-- Preloader -->
         <div class="preloader">
             <div class="loader">
@@ -86,16 +90,16 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active"><a href="#">Home<i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="index.html">Home Page 1</a></li>
-												</ul>
+											<li class="active"><a href="index.html">Home</a>
+												
+													
+												
 											</li>
 											<li><a href="/#">Categories </a></li>
 											<li><a href="../projetWeb 1/projects.html">Projects </a></li>
-											<li><a href="#">Find a Worker <i class="icofont-rounded-down"></i></a>
+											<li><a href="index.html">Find a Worker <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
-													<li><button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-login" >LOGIN</button></li>
+													<li><button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-login"onclick="openModal('worker-seeker')" >LOGIN</button></li>
 													<li>
 														 
 															<button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-worker-seeker" >REGISTER</button>
@@ -106,7 +110,8 @@
 											</li>
 											<li><a href="#">Find a Job <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
-													<li><button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-login" >LOGIN</button></li>
+													<li><button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-login"onclick="openModal('job-seeker')" >LOGIN</button></li>
+													
 													<li >
 														
 														  <button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-job-seeker" >REGISTER</button>
@@ -136,266 +141,134 @@
 
 
 
+		<script>
 
-
-
-
-		<div class="modal fade" id="modal-login" >  
-			<div class="modal-dialog mb-5">   
-			  <div class="modal-content">
-			  
-				   <div class="modal-header" style="background-color: #f2fcf9;">
-					<h5 class="modal-title" id="staticBackdropLabel">Please login</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
-				  </div>
-				  <div class="modal-body">
-					<form action="./loginworker.php"  method="post" class="container" id="form-login" enctype="multipart/form-data"> 
-						<div class="form-row">
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-								<label for="email" style="color: black;">Email</label>
-							  <input type="text" name="email" class="form-control" id="email" placeholder="email" required>
-							  
-							</div>
-						  </div> 
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-								<label for="password" style="color: black;">PASSWORD</label>
-							  <input type="text" name="password"  class="form-control" id="password" placeholder="password" required>
-							  
-							</div>
-						  </div>
-						 
-						</div>
-						
-					 
-					  
-						
-						</div>
-						<div class="container mb-5">
-							  <div class="text-right">
-							
-							   <button name="login" class="btn btn-outline-primary mt-3 " >Login</button>
-						   
-							  </div>
-							</div>
-					  </form>
-				  </div>  
-				  
-					
-				  </div>
-				  
-				</div>
-			  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<div class="modal fade" id="modal-job-seeker" >  
-			<div class="modal-dialog">   
-			  <div class="modal-content">
-			  
-				   <div class="modal-header" style="background-color: #f2fcf9;">
-					<h5 class="modal-title" id="staticBackdropLabel">Please sign this form</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
-				  </div>
-				  <div class="modal-body">
-					<form action="./formulaireworker.php"  method="post" class="container" id="form-job-seeker" enctype="multipart/form-data"> 
-						<div class="form-row">
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input type="text" name="first_name" class="form-control" id="floatingInput" placeholder="first_name" required>
-							  <label for="floatingInput" style="color: black;">First name</label>
-							</div>
-						  </div> 
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input type="text" name="last_name"  class="form-control" id="floatingInput" placeholder="last_name" required>
-							  <label for="floatingInput" style="color: black;">Last name</label>
-							</div>
-						  </div>
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="phone_number" pattern="\d{8}" required>
-							  <label for="floatingInput" style="color: black;">Phone number</label>
-							</div>
-						  </div>
-						</div>
-						<div class="form-row">
-						  
-						  <div class="col-md-6 mb-3">
-							<div class="form-floating">
-							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="city" required>
-							<label for="floatingInput" style="color: black;">City</label>
-						  </div>
-						</div>
-					 
-					  <div class="col-md-12 mb-3">
-						<div class="form-floating">
-						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="email" required>
-						<label for="floatingInput" style="color: black;">E-mail address</label>
-					  </div></div>
-					  <div class="col-md-12 mb-3">
-						<div class="form-floating">
-						<input name="password" type="text" class="form-control" id="floatingInput" placeholder="password" required>
-						<label for="floatingInput" style="color: black;">Password</label>
-					  </div>
-					</div>
-					  <div class="col-md-12 mb-3">
-						<div class="form-container">
-						  <label for="cin">Please drop your CIN image in PDF format</label>
-						  <input name="cin" type="file" class="form-control" id="cin" accept=".pdf" required>
-						  <small id="cin" class="form-text text-muted">Please upload your CIN image in PDF format, with a maximum file size of 2MB.</small>
-						</div>
-					</div>
-					<div class="col-md-12 mb-3">
-						<div class="form-container">
-						  <label for="cv">If you a CV Please drop it in PDF format</label>
-						  <input name="cv" type="file" class="form-control" id="cv" accept=".pdf" required>
-						  <small id="cv" class="form-text text-muted">Please upload your CV in PDF format, with a maximum file size of 2MB.</small>
-						</div>
-					</div>
-						
-						</div>
-						<div class="container">
-							  <div class="text-right">
-							
-							   <button name="registrer" class="btn btn-outline-primary mt-3 " >Register</button>
-						   
-							  </div>
-							</div>
-					  </form>
-				  </div>  
-				  
-					
-				  </div>
-				  
-				</div>
-			  </div>
+			function openModal(userType) {
+				// Ouvrir le modal
+				$('#modal-login').modal('show');
+				
+				// Vérifier le type d'utilisateur et cocher le bouton radio correspondant
+				if (userType === 'job-seeker') {
+					$('#job-seeker').prop('checked', true);
+				} else if (userType === 'worker-seeker') {
+					$('#worker-seeker').prop('checked', true);
+				}
+				
+			}
+		  
+		  </script>  
+		  
+		  <script>
 			
-		<!-- End Header Area -->
-		<div class="modal fade" id="modal-worker-seeker" >  
-			<div class="modal-dialog">   
-			  <div class="modal-content">
-			  
-				   <div class="modal-header" style="background-color: #f2fcf9;">
-					<h5 class="modal-title" id="staticBackdropLabel">Please sign this form</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
-				  </div>
-				  <div class="modal-body">
-					<form action="./formulaireseeker.php"  method="post" class="container" id="form-worker-seeker" enctype="multipart/form-data"> 
-						<div class="form-row">
-							<div class="col-md-4 mb-3">
-							
-								<div class="form-floating">
-								 
-								  <input type="text" name="full_name" class="form-control" id="floatingInput" placeholder="full_name" required>
-								  <label for="floatingInput" style="color: black;">Full name</label>
-								</div>
-							  </div> 
-						</div>
-						<div class="form-row">
+				// Define the loggingin() function
+				function loggingin() {
+					// Get the selected user type
+					var userType = $('input[name="seeker-type"]:checked').val();
+		
+					// Set the form action based on the selected user type
+					if (userType === 'job-seeker') {
 
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input type="text" name="manager_first_name" class="form-control" id="floatingInput" placeholder="manager_first_name" required>
-							  <label for="floatingInput" style="color: black;">Manager First name</label>
-							</div>
-						  </div> 
-
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input type="text" name="manager_last_name"  class="form-control" id="floatingInput" placeholder="manager_last_name" required>
-							  <label for="floatingInput" style="color: black;">Manager Last name</label>
-							</div>
-						  </div>
-						  <div class="col-md-4 mb-3">
-							
-							<div class="form-floating">
-							 
-							  <input  type="text" name="phone_number"  class="form-control" id="floatingInput" placeholder="phone_number" pattern="\d{8}" required>
-							  <label for="floatingInput" style="color: black;">Phone number</label>
-							</div>
-						  </div>
-						</div>
-						<div class="form-row">
-						  
-						  <div class="col-md-6 mb-3">
-							<div class="form-floating">
-							<input name="city" type="text" class="form-control" id="floatingInput" placeholder="city" required>
-							<label for="floatingInput" style="color: black;">City</label>
-						  </div>
-						</div>
-						
-						
-					  <div class="col-md-12 mb-3">
-						<div class="form-floating">
-						<input name="email" type="email" class="form-control" id="floatingInput" placeholder="email" required>
-						<label for="floatingInput" style="color: black;">E-mail address</label>
-					  </div></div>
-					  <div class="col-md-12 mb-3">
-						<div class="form-floating">
-						<input name="password" type="password" class="form-control" id="floatingInput" placeholder="password" required>
-						<label for="floatingInput" style="color: black;">Password</label>
-					  </div>
-					</div>
-					<div class="col-md-12 mb-3">
-						<div class="form-container">
-						  <label for="cin">Please drop the Manager CIN photo</label>
-						  <input name="man_cin" type="file" class="form-control" id="man_cin" accept=".pdf" required>
-						  <small id="Manager-CIN" class="form-text text-muted">Please upload your CIN in PDF format, with a maximum file size of 2MB.</small>
-						</div>
-					</div>
-						
-					</div>
-						
-						</div>
-						<div class="container">
-							  <div class="text-right">
-							
-							   <button name="registrer" class="btn btn-outline-primary mt-3 " >Register</button>
-						   
-							  </div>
-							</div>
-					  </form>
-				  </div>  
-				  
-					
-				  </div>
-				  
-				</div>
-			  </div>
+						$('#form-login').attr('action', 'login-job-seeker.php');
+					} else if (userType === 'worker-seeker') {
+						$('#form-login').attr('action', 'login-worker-seeker.php');
+					}
+		
+					// Submit the form
+					$('#form-login').submit();
+				}
 			
+		</script>
+		
+		
+
+
+		
 
 
 
 
+
+
+
+
+
+
+			  <script>
+				// Récupérer le paramètre d'erreur depuis l'URL
+				const urlParams = new URLSearchParams(window.location.search);
+				const error = urlParams.get('error');
+		
+				// Vérifier s'il y a une erreur et afficher l'alerte correspondante
+				if (error === 'email_in_use') {
+					alert('L\'email est déjà utilisé. Veuillez en choisir un autre.');
+		
+					// Supprimer le paramètre d'erreur de l'URL sans recharger la page
+					const newUrl = window.location.pathname;
+					window.history.replaceState({}, document.title, newUrl);
+				}
+			</script>
+			
+			
+			 <?php include 'modal.html'; ?>
+		
+				<script>
+			
+$(document).ready(function() {
+    $('#form-job-seeker').submit(function(event) {
+        event.preventDefault();
+        var password = $('#password-job-seeker').val();
+        var validpassword = $('#valid-password-job-seeker').val();
+        // Supprimer tout contenu précédent
+        $('#alertContainer-job-seeker').empty();
+        if (password.length < 8) {
+            // Ajouter l'alerte pour la longueur du mot de passe
+            $('#alertContainer-job-seeker').append('<div class="alert alert-danger" role="alert">Le mot de passe doit avoir au moins 8 caractères</div>');
+            if (password != validpassword) {
+                // Ajouter l'alerte pour la non-correspondance des mots de passe
+                $('#alertContainer-job-seeker').append('<div class="alert alert-danger" role="alert">Les mots de passe ne correspondent pas</div>');
+            }
+        } else {
+            if (password != validpassword) {
+                // Ajouter l'alerte pour la non-correspondance des mots de passe
+                $('#alertContainer-job-seeker').append('<div class="alert alert-danger" role="alert">Les mots de passe ne correspondent pas</div>');
+            } else {
+                // Soumettre le formulaire si les mots de passe sont valides
+                this.submit();
+            }
+        }
+    });
+});
+
+					</script>
+						<script>
+			
+							$(document).ready(function() {
+								$('#form-worker-seeker').submit(function(event) {
+									event.preventDefault();
+									var password1 = $('#password-worker-seeker').val();
+									var validpassword1 = $('#valid-password-worker-seeker').val();
+									// Supprimer tout contenu précédent
+									$('#alertContainer-worker-seeker').empty();
+									if (password1.length < 8) {
+										// Ajouter l'alerte pour la longueur du mot de passe
+										$('#alertContainer-worker-seeker').append('<div class="alert alert-danger" role="alert">Le mot de passe doit avoir au moins 8 caractères</div>');
+										if (password1 != validpassword1) {
+											// Ajouter l'alerte pour la non-correspondance des mots de passe
+											$('#alertContainer-worker-seeker').append('<div class="alert alert-danger" role="alert">Les mots de passe ne correspondent pas</div>');
+										}
+									} else {
+										if (password1 != validpassword1) {
+											// Ajouter l'alerte pour la non-correspondance des mots de passe
+											$('#alertContainer-worker-seeker').append('<div class="alert alert-danger" role="alert">Les mots de passe ne correspondent pas</div>');
+										} else {
+											// Soumettre le formulaire si les mots de passe sont valides
+											this.submit();
+										}
+									}
+								});
+							});
+							
+												</script>
 
 
 
@@ -411,8 +284,8 @@
 									<h1>Connecting talents with opportunities, bridging dreams with realities. Welcome to  <span class="khedma-word">خدمة</span>, where every service finds its match. <span>Trust!</span></h1>
 									<p> </p>
 									<div class="button">
-										<a href="#" class="btn">Find a Worker</a>
-										<a href="#" class="btn primary">Find a Job</a>
+										<a href="#" class="btn"onclick="openModal('worker-seeker')">Find a Worker</a>
+										<a href="#" class="btn primary"onclick="openModal('job-seeker')">Find a Job</a>
 									</div>
 								</div>
 							</div>
@@ -429,8 +302,8 @@
 									<h1>Empowering connections, transforming services. Welcome to  <span class="khedma-word">خدمة</span>  Services That You Can <span>Trust!</span></h1>
 									<p> </p>
 									<div class="button">
-										<a href="#" class="btn">Find a Worker</a>
-										<a href="#" class="btn primary">Find a Job</a>
+										<a href="#" class="btn"onclick="openModal('worker-seeker')">Find a Worker</a>
+										<a href="#" class="btn primary"onclick="openModal('job-seeker')">Find a Job</a>
 									</div>
 								</div>
 							</div>
@@ -447,8 +320,8 @@
 									<h1>We Provide <span>Many</span> Services That You Can <span>Trust!</span></h1>
 									<p></p>
 									<div class="button">
-										<a href="#" class="btn">Find a Worker</a>
-										<a href="#" class="btn primary">Find a Job</a>
+										<a href="#" class="btn"onclick="openModal('worker-seeker')">Find a Worker</a>
+										<a href="#" class="btn primary"onclick="openModal('job-seeker')">Find a Job</a>
 									</div>
 								</div>
 							</div>
@@ -867,40 +740,6 @@
 
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModal">
-  Sign Up
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- Sign Up form -->
-        <form>
-          <div class="mb-3">
-            <label for="signupEmail" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp" required>
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-          </div>
-          <div class="mb-3">
-            <label for="signupPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="signupPassword" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Sign Up</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 		<!-- jquery Min JS -->
@@ -943,5 +782,12 @@
 		<script src="js/bootstrap.min.js"></script>
 		<!-- Main JS -->
 		<script src="js/main.js"></script>
+
+
+
+
+
+
+		
     </body>
 </html>
