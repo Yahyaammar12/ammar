@@ -1,5 +1,4 @@
 <?php
-if($_SERVER["REQUEST_METHOD"]=="POST"){
     $host = "localhost";
     $dbname = "khedma";
     $username = "root";
@@ -16,10 +15,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     echo $email;
     echo $pass;
     $query = "SELECT * FROM registration WHERE email='$email' AND mot_de_passe='$pass'";
-
-    $result = $conn->query($query);
-    $row_count = mysqli_num_rows($result);
-echo "Nombre de lignes trouvées : $row_count";
+    $row_count = mysqli_num_rows( $conn->query($query));
+echo "  Nombre de lignes trouvées : $row_count";
     // if($result->num_rows == 1){
     //     // L'utilisateur est authentifié avec succès
     //     // Vous pouvez ajouter ici le code pour rediriger l'utilisateur vers une autre page, par exemple :
@@ -32,5 +29,5 @@ echo "Nombre de lignes trouvées : $row_count";
     // }
 
     $conn->close();
-}
+
 ?>
