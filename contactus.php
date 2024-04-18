@@ -20,7 +20,7 @@ $mail->Username="ttalo1097@gmail.com";
 $mail->Password="xpmy yhui nmup cjpq";
 $mail->Subject =$subject;
 $mail->setFrom("ttalo1097@gmail.com",$email);
-$mail->addAddress("alabenayed214@gmail.com");
+$mail->addAddress("chakrounmino@gmail.com");
 $mail->Body=$message;
 $mail->Send();
 echo "email sent";
