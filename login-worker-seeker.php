@@ -15,21 +15,21 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
     echo $email;
     echo $pass;
-    $query = "SELECT * FROM registration WHERE email='$email' AND mot_de_passe='$pass'";
+    $query = "SELECT * FROM reg_seeker WHERE email='$email' AND mot_de_passe='$pass'";
 
     $result = $conn->query($query);
     $row_count = mysqli_num_rows($result);
 echo "Nombre de lignes trouvées : $row_count";
-    // if($result->num_rows == 1){
-    //     // L'utilisateur est authentifié avec succès
-    //     // Vous pouvez ajouter ici le code pour rediriger l'utilisateur vers une autre page, par exemple :
-    //     // header('Location: dashboard.php');
-    //     // exit();
-    // } else {
-    //     // Échec de l'authentification
-    //     header('Location: 404.html');
-    //     exit();
-    // }
+    if($result->num_rows == 1){
+        // L'utilisateur est authentifié avec succès
+        // Vous pouvez ajouter ici le code pour rediriger l'utilisateur vers une autre page, par exemple :
+        header('Location: dashboard1.php');
+        exit();
+    } else {
+        // Échec de l'authentification
+        header('Location: 404.html');
+        exit();
+    }
 
     $conn->close();
 }

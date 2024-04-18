@@ -5,7 +5,7 @@ $dbname="khedma";
 $username = "root";
 $password  ="";
 
-if (isset($_POST['registrer'])){
+if (isset($_POST['password'])){
    
     $phone_number=$_POST["phone_number"];
     $target2="lesCINSgerants/".$phone_number.'-'.basename($_FILES['man_cin']['name']);
@@ -29,14 +29,23 @@ $email=$_POST["email"];
 $pass=$_POST["password"];
 $city=$_POST["city"];
 
-$sql= "INSERT INTO reg_seeker (full_name, phone_number,email, mot_de_passe, city, manager_first_name, manager_last_name,manager_cin_image)
-        VALUES ('$full_name','$phone_number','$email','$pass','$city','$manager_first_name','$manager_last_name','$pname')";
-        
-$stmt = mysqli_stmt_init($conn);
-mysqli_query($conn,$sql);
+$check_query = "SELECT * FROM reg_seeker WHERE email = '$email'";
+$result = mysqli_query($conn, $check_query);
+if (mysqli_num_rows($result) > 0) {
+    header('Location: index.html?error=email_in_use');
+    exit;}
+else{
 
-
-move_uploaded_file($_FILES['man_cin']['tmp_name'],$target2);
+ header('location:404.html');
+    $sql= "INSERT INTO reg_seeker (full_name, phone_number,email, mot_de_passe, city, manager_first_name, manager_last_name,manager_cin_image)
+            VALUES ('$full_name','$phone_number','$email','$pass','$city','$manager_first_name','$manager_last_name','$pname')";
+            
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_query($conn,$sql);
+    
+    
+    move_uploaded_file($_FILES['man_cin']['tmp_name'],$target2);
+    }
 }
 
 

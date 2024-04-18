@@ -5,7 +5,7 @@ $dbname="khedma";
 $username = "root";
 $password  ="";
 
-if (isset($_POST['registrer'])){
+if (isset($_POST['password'])){
    
     $phone_number=$_POST["phone_number"];
     $target2="lesCINSworkers/".$phone_number.'-'.basename($_FILES['cin']['name']);
@@ -29,15 +29,25 @@ $email=$_POST["email"];
 $pass=$_POST["password"];
 $city=$_POST["city"];
 
-$sql= "INSERT INTO registration (first_name, last_name, phone_number, city, mot_de_passe, email,cin_image,CV)
-        VALUES ('$first_name','$last_name','$phone_number','$city','$pass','$email','$pname','$pname2')";
-        
-$stmt = mysqli_stmt_init($conn);
-mysqli_query($conn,$sql);
+$check_query = "SELECT * FROM registration WHERE email = '$email'";
+$result = mysqli_query($conn, $check_query);
+if (mysqli_num_rows($result) > 0) {
+    header('Location: index.html?error=email_in_use');
+    exit;}
+else{
 
-move_uploaded_file($_FILES['cv']['tmp_name'],$target); 
-move_uploaded_file($_FILES['cin']['tmp_name'],$target2);
+    $sql= "INSERT INTO registration (first_name, last_name, phone_number, city, mot_de_passe, email,cin_image,CV)
+            VALUES ('$first_name','$last_name','$phone_number','$city','$pass','$email','$pname','$pname2')";
+            
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_query($conn,$sql);
+    
+    move_uploaded_file($_FILES['cv']['tmp_name'],$target); 
+    move_uploaded_file($_FILES['cin']['tmp_name'],$target2);
+    }
 }
+    
+    
 
 
 require"vendor/autoload.php";
