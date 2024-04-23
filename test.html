@@ -6,8 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-    echo("asba");
+    <?php
+    // Check if the cookie is set
+    if(isset($_COOKIE['personData'])) {
+        // Retrieve the cookie value
+        $cookieValue = $_COOKIE['personData'];
+        
+        // Decode the JSON string back to an associative array
+        $personData = json_decode($cookieValue, true);
+    
+        // Access the person's name and image URL
+        $personName = $personData['name'];
+        $imageUrl = $personData['image'];
+    
+        // Use the data as needed
+        echo "Person's Name: $personName <br>";
+        echo "Image URL: $imageUrl <br>";
+    } else {
+        echo "Cookie not set!";
+    }
     ?>
+    
 </body>
 </html>
