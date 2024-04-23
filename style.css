@@ -905,7 +905,7 @@ body{
 	padding:120px 0;
 }
 .fun-facts{
-	background:url('img/fun-bg.jpg');
+	background:url('img/client-bg.jpg');
 	background-size:cover;
 	background-repeat:no-repeat;
 }
@@ -964,6 +964,12 @@ body{
 /*===================
 	Why choose CSS
 =====================*/
+.khedma-word{
+	font-family: "Reem Kufi Fun", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: <weight>;
+	font-style: normal;
+  }
 .why-choose .choose-left h3{
 	font-size:24px;
 	font-weight:600;
@@ -1011,7 +1017,7 @@ body{
 .why-choose .choose-right{
 	height:100%;
 	width:100%;
-	background-image:url('img/video-bg.jpg');
+	background-color: #000;
 	background-size:cover;
 	background-position:center;
 	background-repeat:no-repeat;
