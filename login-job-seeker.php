@@ -23,7 +23,7 @@ echo "Nombre de lignes trouvées : $row_count";
     if($result->num_rows == 1){
         // L'utilisateur est authentifié avec succès
         // Vous pouvez ajouter ici le code pour rediriger l'utilisateur vers une autre page, par exemple :
-        header('Location: dashboard-job-seeker.php');
+        header('Location: /tpweb/dashboard1/index.html');
         exit();
     } else {
         // Échec de l'authentification
