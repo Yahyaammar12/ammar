@@ -31,6 +31,25 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
+<?php
+    // Check if the cookie is set 
+    if(isset($_COOKIE['personData'])) {
+    // Retrieve the cookie value
+        $cookieValue = $_COOKIE['personData'];
+        
+     // Decode the JSON string back to an associative array 
+        $personData = json_decode($cookieValue, true);
+    
+    // Access the person's name and image URL 
+        $firstname = $personData['first-name'];
+        $lastname = $personData['last-name'];
+        $cinimg = $personData['cin-img'];
+    
+      
+    } else {
+        echo "Cookie not set!";
+    }
+?>
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
@@ -50,12 +69,12 @@
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle" src="../lesCINSworkers/<?=$cinimg?>" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
-                        <span>Admin</span>
+                        <h6 class="mb-0"> <?=$firstname." ".$lastname?></h6>
+                        <span>Worker</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -166,8 +185,8 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">John Doe</span>
+                            <img class="rounded-circle me-lg-2" src=" ../lesCINSworkers/<?=$cinimg ?>" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex"><?=$firstname." ".$lastname?></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
