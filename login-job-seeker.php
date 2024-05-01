@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $_SESSION["first_name"] = $row['first_name'];
         $firstname=$row['first_name'];
         $lastname=$row['last_name'];
-        $cinimg=$row['cin_image'];
+        $managercinimg=$row['cin_image'];
         $data = array(
             'first-name' => $firstname,
             'last-name' => $lastname,
