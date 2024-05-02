@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +44,75 @@
 </head>
 <body>
 
+  <script>
+			
+    $(document).ready(function() {
+        $('#form-job-seeker').submit(function(event) {
+            event.preventDefault();
+            var password = $('#password-job-seeker').val();
+            var validpassword = $('#valid-password-job-seeker').val();
+            // Supprimer tout contenu précédent
+            $('#alertContainer-job-seeker').empty();
+            if (password.length < 8) {
+                // Ajouter l'alerte pour la longueur du mot de passe
+                $('#alertContainer-job-seeker').append('<div class="alert alert-danger" role="alert">Le mot de passe doit avoir au moins 8 caractères</div>');
+                if (password != validpassword) {
+                    // Ajouter l'alerte pour la non-correspondance des mots de passe
+                    $('#alertContainer-job-seeker').append('<div class="alert alert-danger" role="alert">Les mots de passe ne correspondent pas</div>');
+                }
+            } else {
+                if (password != validpassword) {
+                    // Ajouter l'alerte pour la non-correspondance des mots de passe
+                    $('#alertContainer-job-seeker').append('<div class="alert alert-danger" role="alert">Les mots de passe ne correspondent pas</div>');
+                } else {
+                    // Soumettre le formulaire si les mots de passe sont valides
+                    this.submit();
+                }
+            }
+        });
+    });
+    
+              </script>
+               <script>
+			
+                // Define the loggingin() function
+                function loggingin() {
+                  // Get the selected user type
+                  var userType = $('input[name="seeker-type"]:checked').val();
+            
+                  // Set the form action based on the selected user type
+                  if (userType === 'job-seeker') {
+        
+                    $('#form-login').attr('action', 'login-job-seeker.php');
+                  } else if (userType === 'worker-seeker') {
+                    $('#form-login').attr('action', 'login-worker-seeker.php');
+                  }
+            
+                  // Submit the form
+                  $('#form-login').submit();
+                }
+              
+            </script>
+            
+		<script>
+
+			function openModal(userType) {
+				// Ouvrir le modal
+				$('#modal-login').modal('show');
+				
+				// Vérifier le type d'utilisateur et cocher le bouton radio correspondant
+				if (userType === 'job-seeker') {
+					$('#job-seeker').prop('checked', true);
+				} else if (userType === 'worker-seeker') {
+					$('#worker-seeker').prop('checked', true);
+				}
+				
+			}
+		  
+		  </script>  
+		  
+		 
+		
 
 
   <div class="modal fade" id="modal-job-seeker" >  

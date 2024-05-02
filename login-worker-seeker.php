@@ -19,11 +19,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $result = $conn->query($query);
     $row_count = mysqli_num_rows($result);
-echo "Nombre de lignes trouvées : $row_count";
+
     if($result->num_rows == 1){
-        // L'utilisateur est authentifié avec succès
-        // Vous pouvez ajouter ici le code pour rediriger l'utilisateur vers une autre page, par exemple :
-        header('Location: dashboard-worker-seeker.php');
+        $row = $result->fetch_assoc();
+    
+    
+        $firstname=$row['full_name'];
+        $managercinimg=$row['manager_cin_image'];
+        $data = array(
+            'full-name' => $firstname,
+            'manager-cin-image' => $managercinimg
+        );
+        $jsonData = json_encode($data);
+        setcookie('companyData', $jsonData, time() + (86400 * 30), "/");
+      
+        header('Location: /tpweb/dashboard1/index-worker-seeker.html');
+      
         exit();
     } else {
         // Échec de l'authentification

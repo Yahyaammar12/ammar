@@ -1,6 +1,5 @@
 <?php
-$asba=0;
-$terma=0;
+session_start(); 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     $host = "localhost";
     $dbname = "khedma";
@@ -27,6 +26,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $row = $result->fetch_assoc();
     
         $_SESSION["first_name"] = $row['first_name'];
+        $_SESSION["last_name"]=$row['last_name'];
+        $_SESSION["cin_image"]=$row['cin_image'];
         $firstname=$row['first_name'];
         $lastname=$row['last_name'];
         $cinimg=$row['cin_image'];
@@ -38,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $jsonData = json_encode($data);
         setcookie('personData', $jsonData, time() + (86400 * 30), "/");
       
-        header('Location: /tpweb/dashboard1/index.html');
+        header('Location: /tpweb/dashboard1/index-job-seeker.html');
         exit();
     } else {
         // Échec de l'authentification
