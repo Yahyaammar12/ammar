@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION['first_name'])) {
+    // If not logged in, redirect to the login page
+	header('Location: /tpweb/dashboard1/index.html');
+    exit;
+} ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
