@@ -48,6 +48,7 @@ Version:	1.1
 /*=============================
 	Global CSS 
 ===============================*/
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap');
 body{
     font-family: 'Poppins', sans-serif;
 	font-weight: 400;
@@ -967,7 +968,6 @@ body{
 .khedma-word{
 	font-family: "Reem Kufi Fun", sans-serif;
 	font-optical-sizing: auto;
-	font-weight: <weight>;
 	font-style: normal;
   }
 .why-choose .choose-left h3{
