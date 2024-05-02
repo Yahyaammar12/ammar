@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     $host = "localhost";
     $dbname = "khedma";
@@ -22,7 +23,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     if($result->num_rows == 1){
         $row = $result->fetch_assoc();
-    
+        $_SESSION["first_name"] = $row['full_name'];
+        
+        $_SESSION["cin_image"]=$row['manager_cin_image'];
     
         $firstname=$row['full_name'];
         $managercinimg=$row['manager_cin_image'];
