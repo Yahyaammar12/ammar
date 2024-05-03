@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $_SESSION["first_name"] = $row['full_name'];
         
         $_SESSION["cin_image"]=$row['manager_cin_image'];
-    
+   
         $firstname=$row['full_name'];
         $managercinimg=$row['manager_cin_image'];
         $data = array(
@@ -35,8 +35,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         );
         $jsonData = json_encode($data);
         setcookie('companyData', $jsonData, time() + (86400 * 30), "/");
-      
         header('Location: /tpweb/dashboard1/index-worker-seeker.html');
+      
+        header('Location: /webproject/dashboard1/index-worker-seeker.html');
       
         exit();
     } else {

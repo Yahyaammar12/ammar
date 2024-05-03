@@ -1,8 +1,12 @@
-
 <?php
-if (isset($_SESSION['first_name'])) {
+session_start();
+if (isset($_SESSION['last_name'])) {
     // If not logged in, redirect to the login page
-	header('Location: /tpweb/dashboard1/index.html');
+	header('Location: /tpweb/dashboard1/index-job-seeker.html');
+    exit;
+}else if (isset($_SESSION['first_name'])) {
+    // If not logged in, redirect to the login page
+	header('Location: /tpweb/dashboard1/index-worker-seeker.html');
     exit;
 } ?>
 <!doctype html>
@@ -123,7 +127,7 @@ if (isset($_SESSION['first_name'])) {
 														
 													  </li></ul>
 											</li>
-											<li class="active"><a href="contact.html">Contact Us</a></li>
+											<li class=""><a href="contact.html">Contact Us</a></li>
 										</ul>
 									</nav>
 								</div>

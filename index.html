@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_SESSION['last_name'])) {
+    // If not logged in, redirect to the login page
+	header('Location: /tpweb/dashboard1/index-job-seeker.html');
+    exit;
+}else if (isset($_SESSION['first_name'])) {
+    // If not logged in, redirect to the login page
+	header('Location: /tpweb/dashboard1/index-worker-seeker.html');
+    exit;
+} ?>
+
 <!doctype html>
 <html class="no-js" lang="zxx" >
     <head>

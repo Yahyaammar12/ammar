@@ -27,6 +27,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     
         $_SESSION["first_name"] = $row['first_name'];
         $_SESSION["last_name"]=$row['last_name'];
+        $_SESSION["age"]=$row['age'];
+        $_SESSION["email"]=$row['email'];
+        $_SESSION["city"]=$row['city'];
+        $_SESSION["phone_number"]=$row["phone_number"];
+        
+        
         $_SESSION["cin_image"]=$row['cin_image'];
         $_SESSION["email"]=$row['email'];
         $_SESSION["phone_number"]=$row['phone_number'];
@@ -46,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $jsonData = json_encode($data);
         setcookie('personData', $jsonData, time() + (86400 * 30), "/");
       
-        header('Location: /tpweb/dashboard1/index-job-seeker.html');
+        header('Location: /webproject/dashboard1/index-job-seeker.html');
         exit();
     } else {
         // Échec de l'authentification

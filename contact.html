@@ -1,7 +1,12 @@
 <?php
-if (isset($_SESSION['first_name'])) {
+session_start();
+if (isset($_SESSION['last_name'])) {
     // If not logged in, redirect to the login page
-	header('Location: /tpweb/dashboard1/index.html');
+	header('Location: /tpweb/dashboard1/index-job-seeker.html');
+    exit;
+}else if (isset($_SESSION['first_name'])) {
+    // If not logged in, redirect to the login page
+	header('Location: /tpweb/dashboard1/index-worker-seeker.html');
     exit;
 } ?>
 <!doctype html>
@@ -233,7 +238,7 @@ $(document).ready(function() {
 													
 												
 											</li>
-											<li><a href="/#">Categories </a></li>
+											<li><a href="category.html">Categories </a></li>
 											<li><a href="index.html">Find a Worker <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><button class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#modal-login"onclick="openModal('worker-seeker')" >LOGIN</button></li>

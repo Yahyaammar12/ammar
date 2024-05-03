@@ -31,7 +31,35 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+<!--font-family-->
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+<!-- title of site -->
+<title>Directory Landing Page</title>
 
+
+<!--font-awesome.min.css-->
+<link rel="stylesheet" href="./css/font-awesome.min.css">
+
+<!--linear icon css-->
+<link rel="stylesheet" href="./css/linearicons.css">
+
+<!--animate.css-->
+<link rel="stylesheet" href="./css/animate.css">
+
+<!--flaticon.css-->
+<link rel="stylesheet" href="./css/flaticon.css">
+
+<!--slick.css-->
+<link rel="stylesheet" href="./css/slick.css">
+<link rel="stylesheet" href="./css/slick-theme.css">
+
+<!--style.css-->
+<link rel="stylesheet" href="./css/stylev2.css">
+
+<!--responsive.css-->
+<link rel="stylesheet" href="./css/responsive.css">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 <?php
 session_start();
@@ -65,7 +93,7 @@ session_start();
                 <div class="navbar-nav w-100">
                     <a href="index-job-seeker.html" class="nav-item nav-link active"><i class="fas fa-home icon me-2"></i>Home</a>
                    
-                    <a href="jobsearch.html" class="nav-item nav-link"><i class="fas fa-search icon me-2"></i>Job Search</a>
+                    <a href="jobsearch.html" class="nav-item nav-link"><i class="fas fa-search icon me-2"></i>Opportunities</a>
                     <a href="notifications.html" class="nav-item nav-link"><i class="fas fa-bell icon me-2"></i>Notifications</a>
                     <a href="resume.html" class="nav-item nav-link"><i class="far fa-file icon me-2"></i>Resume Builder</a>
                     <div class="nav-item dropdown">
@@ -99,7 +127,7 @@ session_start();
                     <h2 class="text-primary mb-0"><i class="fas fa-home icon"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
+                    <i class="fas fa-bars"></i>
                 </a>
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Search">
@@ -107,7 +135,7 @@ session_start();
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
+                            <i class="fas fa-envelope me-lg-2"></i>
                             <span class="d-none d-lg-inline-flex">Messages</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -226,7 +254,338 @@ session_start();
                 </div>
             </div>
             <!-- Sale & Revenue End -->
+<!--explore start -->
+<br>
+<section id="explore" class="explore">
+    <div class="container">
+        <div class="section-header">
+            <h2> Offers </h2>
+            <p>Explore New experience</p>
+        </div><!--/.section-header-->
+        <div class="explore-content">
+            <div class="row">
+                <div class=" col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="./img/aiotech.jpg" alt="explore image">
+                            <div class="single-explore-img-info">
+                                <button onclick="window.location.href='#'">best rated</button>
+                            </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-1">
+                            <h2><a href="#">AIO TECHNOLOGY</a></h2>
+                            <p class="explore-rating-price">
+                                <span class="explore-rating">5.0</span>
+                                <a href="#"> 10 ratings</a> 
+                                <span class="explore-price-box">
+                                    form
+                                    <span class="explore-price">500$-1000$ salary</span>
+                                </span>
+                                 <a href="#">TECHNICIAN</a>
+                            </p>
+                            <div class="explore-person">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="explore-person-img">
+                                            <a href="#">
+                                                <img src="./img/aiotech.jpg" alt="explore person">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-11">
+                                        <p>
+                                           WE WANT A GOOD TECHNICIAN ...
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="explore-open-close-part">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <button class="close-btn" onclick="window.location.href='#'">unavailable</button>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="explore-map-icon">
+                                            <a href="#"><i data-feather="map-pin"></i></a>
+                                            <a href="#"><i data-feather="upload"></i></a>
+                                            <a href="#"><i data-feather="heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="./img/1631344630799.jpg" alt="explore image">
+                            <div class="single-explore-img-info">
+                                <button onclick="window.location.href='#'">featured</button>
+                            </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-2">
+                            <h2><a href="#">NG-Multimedia</a></h2>
+                            <p class="explore-rating-price">
+                                <span class="explore-rating">4.5</span>
+                                <a href="#"> 8 ratings</a> 
+                                <span class="explore-price-box">
+                                    form
+                                    <span class="explore-price">600$-1200$ salary</span>
+                                </span>
+                                 <a href="#">ENGINEER</a>
+                            </p>
+                            <div class="explore-person">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="explore-person-img">
+                                            <a href="#">
+                                                <img src="./img/NG-INFO.jpg" alt="explore person">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-11">
+                                        <p>
+                                            Computer support and services in Tunis.... 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="explore-open-close-part">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <button class="close-btn open-btn" onclick="window.location.href='#'">available</button>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="explore-map-icon">
+                                            <a href="#"><i data-feather="map-pin"></i></a>
+                                            <a href="#"><i data-feather="upload"></i></a>
+                                            <a href="#"><i data-feather="heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="./img/1200px-DoubleClick_Logo.svg.png" alt="explore image">
+                            <div class="single-explore-img-info">
+                                <button onclick="window.location.href='#'">best rated</button>
 
+                            </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-3">
+                            <h2><a href="#">DOUBLE CLICK</a></h2>
+                            <p class="explore-rating-price">
+                                <span class="explore-rating">5.0</span>
+                                <a href="#"> 15 ratings</a> 
+                                <span class="explore-price-box">
+                                    form
+                                    <span class="explore-price">1k$-1,5k$ salary</span>
+                                </span>
+                                 <a href="#">MARKETING</a>
+                            </p>
+                            <div class="explore-person">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="explore-person-img">
+                                            <a href="#">
+                                                <img src="./img/1200px-DoubleClick_Logo.svg.png" alt="explore person">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-11">
+                                        <p>
+                                            Computer store in ARIANA, Offers repair services · Offers same-day delivery.... 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="explore-open-close-part">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <button class="close-btn open-btn" onclick="window.location.href='#'">available</button>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="explore-map-icon">
+                                            <a href="#"><i data-feather="map-pin"></i></a>
+                                            <a href="#"><i data-feather="upload"></i></a>
+                                            <a href="#"><i data-feather="heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="./img/TECHNOSOFT-LOGO-1 - Copy.png" alt="explore image">
+                            <div class="single-explore-img-info">
+                                <button onclick="window.location.href='#'">most view</button>
+                                
+                            </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-4">
+                            <h2><a href="#">TechnoSoft</a></h2>
+                            <p class="explore-rating-price">
+                                <span class="explore-rating">5.0</span>
+                                <a href="#"> 10 ratings</a> 
+                                <span class="explore-price-box">
+                                    form
+                                    <span class="explore-price">2,5k$-3k$</span>
+                                </span>
+                                 <a href="#">ENGINEER</a>
+                            </p>
+                            <div class="explore-person">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="explore-person-img">
+                                            <a href="#">
+                                                <img src="./img/TECHNOSOFT-LOGO-1 - Copy.png" alt="explore person">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-11">
+                                        <p>
+                                            Software Company en ARIANA , leader en Logiciels de GMAO GPAO GEID en TUNISIE et commence à s'installer à l'étranger..... 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="explore-open-close-part">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <button class="close-btn open-btn" onclick="window.location.href='#'">Available</button>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="explore-map-icon">
+                                            <a href="#"><i data-feather="map-pin"></i></a>
+                                            <a href="#"><i data-feather="upload"></i></a>
+                                            <a href="#"><i data-feather="heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="./img/mark.webp" alt="explore image">
+                            <div class="single-explore-img-info">
+                                <button onclick="window.location.href='#'">most view</button>
+                                
+                            </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-2">
+                            <h2><a href="#">SMARTEK SERVICES</a></h2>
+                            <p class="explore-rating-price">
+                                <span class="explore-rating">4.2</span>
+                                <a href="#"> 8 ratings</a> 
+                                <span class="explore-price-box">
+                                    form
+                                    <span class="explore-price">700$-1200$ salary</span>
+                                </span>
+                                 <a href="#">Customer Service</a>
+                            </p>
+                            <div class="explore-person">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="explore-person-img">
+                                            <a href="#">
+                                                <img src="./img/mark.webp" alt="explore person">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-11">
+                                        <p>
+                                            Smatek.services, Tunis, Tunisia..... 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="explore-open-close-part">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <button class="close-btn open-btn" onclick="window.location.href='#'">Available</button>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="explore-map-icon">
+                                            <a href="#"><i data-feather="map-pin"></i></a>
+                                            <a href="#"><i data-feather="upload"></i></a>
+                                            <a href="#"><i data-feather="heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="./img/final_600xgeiser.webp" alt="explore image">
+                            <div class="single-explore-img-info">
+                                <button onclick="window.location.href='#'">best rated</button>
+                          
+                            </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-5">
+                            <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
+                            <p class="explore-rating-price">
+                                <span class="explore-rating">5.5</span>
+                                <a href="#"> 15 ratings</a> 
+                                <span class="explore-price-box">
+                                    form
+                                    <span class="explore-price">5k$-6k$ salary</span>
+                                </span>
+                                 <a href="#">ENGINEER</a>
+                            </p>
+                            <div class="explore-person">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="explore-person-img">
+                                            <a href="#">
+                                                <img src="./img/final_600xgeiser.webp" alt="explore person">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-11">
+                                        <p>
+                                            Services de securité informatiques .... 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="explore-open-close-part">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <button class="close-btn" onclick="window.location.href='#'">Unavailable</button>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="explore-map-icon">
+                                            <a href="#"><i data-feather="map-pin"></i></a>
+                                            <a href="#"><i data-feather="upload"></i></a>
+                                            <a href="#"><i data-feather="heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/.container-->
+
+</section><!--/.explore-->
+<!--explore end -->
 
             <!-- Sales Chart Start -->
             <div class="container-fluid pt-4 px-4">
@@ -488,6 +847,10 @@ session_start();
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        feather.replace();
+    </script>
+    
 </body>
 
 </html>
