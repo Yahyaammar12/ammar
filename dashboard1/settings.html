@@ -258,7 +258,7 @@ session_start();
                             />
                             </div>
                             <div class="mb-15">
-                            <label class="fs-14 c-grey d-block mb-5" for="last">Last Name</label>
+                            <label class="fs-14 c-grey d-block mb-10" for="last">Last Name</label>
                             <input
                                 class="b-none border-ccc p-10 rad-6 d-block w-full"
                                 id="last"
@@ -267,15 +267,8 @@ session_start();
                             />
                             </div>
                             <div>
-                            <label class="fs-14 c-grey d-block mb-5" for="email">Email</label>
-                            <input
-                                class="email b-none border-ccc p-10 rad-6 w-full mr-10"
-                                id="email"
-                                type="email"
-                                value="o@nn.sa"
-                                disabled
-                            />
-                            <a class="c-blue" href="#">Change</a>
+                           
+                            <button type="submit" class="btn btn-primary m-2">Change</button>
                             </div>
                         </div>
                     </div>
@@ -290,11 +283,59 @@ session_start();
                             <h2 class="mt-0 mb-10">Security Info</h2>
                             <p class="mt-0 mb-20 c-grey fs-15">Security Information About Your Account</p>
                             <div class="sec-box mb-15 between-flex">
-                            <div>
-                                <span>Password</span>
-                                <p class="c-grey mt-5 mb-0 fs-13">Last Change On 25/10/2021</p>
+                                <div class="mb-15">
+                                    <div class="mb-10">
+
+                                        <label class="fs-14 c-grey d-block mb-10" for="oldpassword">Tap your old Password
+                                        </label>
+                                        <input
+                                            class="b-none border-ccc p-10 rad-6 d-block w-full"
+                                            type="password"
+                                            id="oldpassword"
+                                            placeholder="oldPassword"
+                                        />
+                                    </div>
+                                    <div class="mb-10">
+
+                                        <label class="fs-14 c-grey d-block mb-10" for="password"> Tap yout new Password
+                                        </label>
+                                        <input
+                                            class="b-none border-ccc p-10 rad-6 d-block w-full"
+                                            type="password"
+                                            id="password"
+                                            placeholder="Password"
+                                        />
+                                    </div>
+                                    </div>
+                            <button type="submit" class="btn btn-primary m-2">Change</button>
                             </div>
-                            <a class="button bg-blue c-white btn-shape" href="#">Change</a>
+                            <div class="sec-box mb-15 between-flex">
+                                <div class="mb-15">
+                                    <div class="mb-10">
+
+                                        <label class="fs-14 c-grey d-block mb-10" for="oldemail">Your Old Email
+                                        </label>
+                                        <input
+                                            class="b-none border-ccc p-10 rad-6 d-block w-full"
+                                            type="oldemail"
+                                            id="oldemail"
+                                            placeholder="old email"
+                                        />
+                                    </div>
+                                    <div class="mb-10">
+
+                                        <label class="fs-14 c-grey d-block mb-10" for="email">Email
+                                        </label>
+                                        <input
+                                            class="b-none border-ccc p-10 rad-6 d-block w-full"
+                                            type="email"
+                                            id="email"
+                                            placeholder="email"
+                                        />
+                                    </div>
+                                    
+                                    </div>
+                            <button type="submit" class="btn btn-primary m-2">Change</button>
                             </div>
                             <div class="sec-box mb-15 between-flex">
                             <div>
@@ -323,20 +364,21 @@ session_start();
                             <p class="mt-0 mb-20 c-grey fs-15">Social Media Information</p>
                             <div class="d-flex align-center mb-15">
                             <i class="fa-brands fa-twitter center-flex c-grey"></i>
-                            <input class="w-full" type="text" placeholder="Twitter Username" />
+                            <input class="w-full" type="text" placeholder="Twitter Link" />
                             </div>
                             <div class="d-flex align-center mb-15">
                             <i class="fa-brands fa-facebook-f center-flex c-grey"></i>
-                            <input class="w-full" type="text" placeholder="Facebook Username" />
+                            <input class="w-full" type="text" placeholder="Facebook Link" />
                             </div>
                             <div class="d-flex align-center mb-15">
                             <i class="fa-brands fa-linkedin center-flex c-grey"></i>
-                            <input class="w-full" type="text" placeholder="Linkedin Username" />
+                            <input class="w-full" type="text" placeholder="Linkedin Link" />
                             </div>
                             <div class="d-flex align-center">
-                            <i class="fa-brands fa-youtube center-flex c-grey"></i>
-                            <input class="w-full" type="text" placeholder="Youtube Username" />
+                            <i class="fa-brands fa-instagram center-flex c-grey"></i>
+                            <input class="w-full" type="text" placeholder="Instagram Link" />
                             </div>
+                            <button type="submit" class="btn btn-primary m-3">Change</button>
                         </div>
                         </div>
                 <!-- End Settings Box -->

@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $jsonData = json_encode($data);
         setcookie('personData', $jsonData, time() + (86400 * 30), "/");
       
-        header('Location: /webproject/dashboard1/index-job-seeker.html');
+        header('Location: /tpweb/dashboard1/index-job-seeker.html');
         exit();
     } else {
         // Échec de l'authentification
