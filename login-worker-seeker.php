@@ -24,6 +24,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     if($result->num_rows == 1){
         $row = $result->fetch_assoc();
+        $_SESSION['first_name'] = $row['manager_first_name'];
+        $_SESSION['last_name'] =  $row['manager_last_name'];
         $_SESSION["full_name"] = $row['full_name'];
         $_SESSION["manager_cin_image"]=$row['manager_cin_image'];
         $_SESSION["email"]=$row['email'];

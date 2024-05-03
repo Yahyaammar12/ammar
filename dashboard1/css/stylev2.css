@@ -815,4 +815,9 @@ html,body{height: 100%;}
     0%   {bottom:0px;}
     100%  {bottom:7px;}
 }
+
+.was {
+    color: blue;
+}
+
 /*========================Thank you=================

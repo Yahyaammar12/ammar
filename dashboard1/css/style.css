@@ -256,29 +256,41 @@ body{
     transition: 2s;
 }
 
-
-/*** Testimonial ***/
-.testimonial-carousel .owl-dots {
-    margin-top: 24px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.testimonial-carousel .owl-dot {
+/* .section-title h1 {
     position: relative;
     display: inline-block;
-    margin: 0 5px;
-    width: 15px;
-    height: 15px;
-    border: 5px solid var(--primary);
-    border-radius: 15px;
-    transition: .5s;
+    padding: 0 60px;
 }
 
-.testimonial-carousel .owl-dot.active {
+.section-title.text-start h1 {
+    padding-left: 0;
+}
+
+<<<<<<< HEAD
+.section-title h1::before,
+.section-title h1::after {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 5px;
+    bottom: 0;
     background: var(--dark);
-    border-color: var(--primary);
 }
 
+.section-title h1::before {
+    left: 0;
+}
 
+.section-title h1::after {
+    right: 0;
+}
+
+.section-title.text-start h1::before {
+    display: none;
+} */
+.was p{
+    color: blue;
+}
+=======
+
+>>>>>>> 5894a91497391562551ea48280e568c1466c2322

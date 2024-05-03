@@ -106,11 +106,11 @@ if(isset($_SESSION['linkedin'])) {
             
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                    <img class="rounded-circle" src="../lesCINSgerants/<?= $_SESSION['cin_image']?>" alt="" style="width: 40px; height: 40px;">
+                    <img class="rounded-circle" src="../lesCINSgerants/<?= $_SESSION['manager_cin_image']?>" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0"> <?=  $_SESSION['first_name']?></h6>
+                        <h6 class="mb-0"> <?=  $_SESSION['full_name']?></h6>
                         <span>Company</span>
                     </div>
                 </div>
@@ -221,8 +221,8 @@ if(isset($_SESSION['linkedin'])) {
                     </div> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src=" ../lesCINSgerants/<?=$_SESSION['cin_image'] ?>" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex"><?=$_SESSION["first_name"]?></span>
+                            <img class="rounded-circle me-lg-2" src=" ../lesCINSgerants/<?=$_SESSION['manager_cin_image'] ?>" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex"><?=$_SESSION["full_name"]?></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="myprofile1.html" class="dropdown-item">My Profile</a>
@@ -244,10 +244,10 @@ if(isset($_SESSION['linkedin'])) {
                 <div class="bg-light rounded p-4">
                     <div class="wrapper">
                         <div class="left">
-                            <img src=" ../lesCINSworkers/<?=$_SESSION['cin_image'] ?>" 
+                            <img src=" ../lesCINSgerants/<?=$_SESSION['manager_cin_image'] ?>" 
                             alt="user" width="100">
-                            <h4><?=$_SESSION["first_name"]." ".$_SESSION["last_name"] ?></h4>
-                            <p>Worker </p>
+                            <h4><?=$_SESSION["full_name"]?></h4>
+                            <p>Company'owner </p>
                         </div>
                         <div class="right">
                             <div class="info">
