@@ -34,6 +34,25 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var securityLink = document.querySelector('a[href="#security"]');
+            if (securityLink) {
+                securityLink.addEventListener("click", function(event) {
+                    event.preventDefault(); // Prevent default anchor behavior
+                    var targetElement = document.getElementById('security');
+                    if (targetElement) {
+                        var offsetTop = targetElement.offsetTop;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: "smooth" // Smooth scrolling
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+    
     
 
 </head>
@@ -75,9 +94,8 @@ session_start();
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-cog icon me-2"></i>Settings</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Profile Management</a>
-                            <a href="typography.html" class="dropdown-item">Security</a>
-                            <a href="element.html" class="dropdown-item">Language</a>
+                            <a href="settings.html" class="dropdown-item">Profile Management</a>
+                            <a href="settings.html#security" class="dropdown-item">Security</a>
                         </div>
                     </div>
                     <a href="logout.php" class="nav-item nav-link"><i class="fas fa-sign-out-alt icon me-2"></i>Logout</a>
