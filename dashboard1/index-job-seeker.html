@@ -30,13 +30,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/jdid.css" rel="stylesheet">
 <!--font-family-->
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         
-<!-- title of site -->
-<title>Directory Landing Page</title>
-
 
 <!--font-awesome.min.css-->
 <link rel="stylesheet" href="./css/font-awesome.min.css">
@@ -60,6 +58,7 @@
 <!--responsive.css-->
 <link rel="stylesheet" href="./css/responsive.css">
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="js/main1.js"></script>
 </head>
 <?php
 session_start();
@@ -587,227 +586,140 @@ session_start();
 </section><!--/.explore-->
 <!--explore end -->
 
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
+<!-- <section class="featured-product section-padding">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-12 text-center">
+                <h2 class="mb-5">Featured Products</h2>
+            </div>
+
+            <div class="col-lg-4 col-12 mb-3">
+                <div class="product-thumb">
+                    <a href="product-detail.html">
+                        <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="">
+                    </a>
+
+                    <div class="product-top d-flex">
+                        <span class="product-alert me-auto">New Arrival</span>
+
+                        <a href="#" class="bi-heart-fill product-icon"></a>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
+
+                    <div class="product-info d-flex">
+                        <div>
+                            <h5 class="product-title mb-0">
+                                <a href="product-detail.html" class="product-title-link">Tree pot</a>
+                            </h5>
+
+                            <p class="product-p">Original package design from house</p>
                         </div>
+
+                        <small class="product-price text-muted ms-auto mt-auto mb-5">$25</small>
                     </div>
                 </div>
             </div>
-            <!-- Sales Chart End -->
 
+            <div class="col-lg-4 col-12 mb-3">
+                <div class="product-thumb">
+                    <a href="product-detail.html">
+                        <img src="images/product/jordan-nix-CkCUvwMXAac-unsplash.jpeg" class="img-fluid product-image" alt="">
+                    </a>
 
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
-                        <a href="">Show All</a>
+                    <div class="product-top d-flex">
+                        <span class="product-alert">Low Price</span>
+
+                        <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                    <div class="product-info d-flex">
+                        <div>
+                            <h5 class="product-title mb-0">
+                                <a href="product-detail.html" class="product-title-link">Fashion Set</a>
+                            </h5>
+
+                            <p class="product-p">Costume Package</p>
+                        </div>
+
+                        <small class="product-price text-muted ms-auto mt-auto mb-5">$35</small>
                     </div>
                 </div>
             </div>
-            <!-- Recent Sales End -->
 
+            <div class="col-lg-4 col-12">
+                <div class="product-thumb">
+                    <a href="product-detail.html">
+                        <img src="images/product/nature-zen-3Dn1BZZv3m8-unsplash.jpeg" class="img-fluid product-image" alt="">
+                    </a>
 
-            <!-- Widgets Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-2">
-                                <h6 class="mb-0">Messages</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="product-top d-flex">
+                        <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Calender</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div id="calender"></div>
+
+                    <div class="product-info d-flex">
+                        <div>
+                            <h5 class="product-title mb-0">
+                                <a href="product-detail.html" class="product-title-link">Juice Drinks</a>
+                            </h5>
+
+                            <p class="product-p">Nature made another world</p>
                         </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">To Do List</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <input class="form-control bg-transparent" type="text" placeholder="Enter task">
-                                <button type="button" class="btn btn-primary ms-2">Add</button>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox" checked>
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span><del>Short task goes here...</del></span>
-                                        <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        <small class="product-price text-muted ms-auto mt-auto mb-5">$45</small>
                     </div>
                 </div>
             </div>
-            <!-- Widgets End -->
 
+            <div class="col-12 text-center">
+                <a href="products.html" class="view-all">View All Products</a>
+            </div>
+
+        </div>
+    </div>
+</section> -->
+
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="section-title text-center">
+            <h1 class="tab display-5 mb-5">Opportunities</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="./img/logo-geiser.png" style="width: 90px; height: 90px;">
+                <div class="testimonial-text text-center p-4">
+                            <h2>Société Générale Informatique Et Services - Geiserr</h2>
+                    <p>Services de securité informatiques ....</p>
+                    <h5 class="mb-1">ENGINEER</h5>
+                    <span class="fst-italic">Good Salary</span>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="./img/aiotech.jpg" style="width: 90px; height: 90px;">
+                <div class="testimonial-text text-center p-4">
+                    <h2>AIO TECHNOLOGY</h2>
+                    <p>WE WANT A GOOD TECHNICIAN ...</p>
+                    <h5 class="mb-1">TECHNICIAN</h5>
+                    <span class="fst-italic">Average Salary</span>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/mark.webp" style="width: 90px; height: 90px;">
+                <div class="testimonial-text text-center p-4">
+                    <h2>SMARTEK SERVICES</h2>
+                    <p>Smatek.services, Tunis, Tunisia.....</p>
+                    <h5 class="mb-1">Customer Service</h5>
+                    <span class="fst-italic">Profession</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12 text-center">
+    <a href="./jobsearch.html" class="view">See More</a>
+</div>
+<!-- Testimonial End -->
+
+           
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
@@ -847,6 +759,7 @@ session_start();
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
     <script>
         feather.replace();
     </script>
