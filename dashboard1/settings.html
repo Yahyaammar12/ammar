@@ -278,84 +278,68 @@ session_start();
                 
                 <!-- End Settings Box -->
                 <!-- Start Settings Box -->
-                        <div class="p-20 bg-white rad-10" id="security">
-                            <div class="bg-light rounded h-100 p-4">
+                <div class="p-20 bg-white rad-10" id="security">
+                    <form id="password_form" method="post" action="change.php">
+                        <div class="bg-light rounded h-100 p-4">
                             <h2 class="mt-0 mb-10">Security Info</h2>
                             <p class="mt-0 mb-20 c-grey fs-15">Security Information About Your Account</p>
                             <div class="sec-box mb-15 between-flex">
                                 <div class="mb-15">
                                     <div class="mb-10">
-
-                                        <label class="fs-14 c-grey d-block mb-10" for="oldpassword">Tap your old Password
-                                        </label>
-                                        <input
-                                            class="b-none border-ccc p-10 rad-6 d-block w-full"
-                                            type="password"
-                                            id="oldpassword"
-                                            placeholder="oldPassword"
-                                        />
+                                        <label class="fs-14 c-grey d-block mb-10" for="oldpassword">Tap your old Password</label>
+                                        <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="password" id="oldpassword"
+                                            name="oldpassword" placeholder="Old Password" />
                                     </div>
                                     <div class="mb-10">
-
-                                        <label class="fs-14 c-grey d-block mb-10" for="password"> Tap yout new Password
-                                        </label>
-                                        <input
-                                            class="b-none border-ccc p-10 rad-6 d-block w-full"
-                                            type="password"
-                                            id="password"
-                                            placeholder="Password"
-                                        />
+                                        <label class="fs-14 c-grey d-block mb-10" for="password"> Tap your new Password</label>
+                                        <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="password" id="password"
+                                            name="password" placeholder="New Password" />
                                     </div>
-                                    </div>
-                            <button type="submit" class="btn btn-primary m-2">Change</button>
+                                </div>
+                                <button type="submit" class="btn btn-primary m-2" id="change_password" name="change_password">Change
+                                    Password</button>
                             </div>
+                        </div>
+                    </form>
+                    <form id="email_form" method="post" action="change.php">
+                        <div class="bg-light rounded h-100 p-4">
                             <div class="sec-box mb-15 between-flex">
                                 <div class="mb-15">
                                     <div class="mb-10">
-
-                                        <label class="fs-14 c-grey d-block mb-10" for="oldemail">Your Old Email
-                                        </label>
-                                        <input
-                                            class="b-none border-ccc p-10 rad-6 d-block w-full"
-                                            type="oldemail"
-                                            id="oldemail"
-                                            placeholder="old email"
-                                        />
+                                        <label class="fs-14 c-grey d-block mb-10" for="oldemail">Your Old Email</label>
+                                        <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="email" id="oldemail"
+                                            name="oldemail" placeholder="Old Email" />
                                     </div>
                                     <div class="mb-10">
-
-                                        <label class="fs-14 c-grey d-block mb-10" for="email">Email
-                                        </label>
-                                        <input
-                                            class="b-none border-ccc p-10 rad-6 d-block w-full"
-                                            type="email"
-                                            id="email"
-                                            placeholder="email"
-                                        />
+                                        <label class="fs-14 c-grey d-block mb-10" for="email">Email</label>
+                                        <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="email" id="email"
+                                            name="email" placeholder="New Email" />
                                     </div>
-                                    
-                                    </div>
-                            <button type="submit" class="btn btn-primary m-2">Change</button>
-                            </div>
-                            <div class="sec-box mb-15 between-flex">
-                            <div>
-                                <span>Two-Factor Authentication</span>
-                                <p class="c-grey mt-5 mb-0 fs-13">Enable/Disable The Feature</p>
-                            </div>
-                            <label>
-                                <input class="toggle-checkbox" type="checkbox" checked />
-                                <div class="toggle-switch"></div>
-                            </label>
-                            </div>
-                            <div class="sec-box between-flex">
-                            <div>
-                                <span>Devices</span>
-                                <p class="c-grey mt-5 mb-0 fs-13">Check The Login Devices List</p>
-                            </div>
-                            <a class="bg-eee c-black btn-shape" href="#">Devices</a>
+                                </div>
+                                <button type="submit" class="btn btn-primary m-2" id="change_email" name="change_email">Change
+                                    Email</button>
                             </div>
                         </div>
+                    </form>
+                    <div class="sec-box mb-15 between-flex">
+                        <div>
+                            <span>Two-Factor Authentication</span>
+                            <p class="c-grey mt-5 mb-0 fs-13">Enable/Disable The Feature</p>
                         </div>
+                        <label>
+                            <input class="toggle-checkbox" type="checkbox" checked />
+                            <div class="toggle-switch"></div>
+                        </label>
+                    </div>
+                    <div class="sec-box between-flex">
+                        <div>
+                            <span>Devices</span>
+                            <p class="c-grey mt-5 mb-0 fs-13">Check The Login Devices List</p>
+                        </div>
+                        <a class="bg-eee c-black btn-shape" href="#">Devices</a>
+                    </div>
+                </div>
+                
                 <!-- End Settings Box -->
                 <!-- Start Settings Box -->
                         <div class="social-boxes p-20 bg-white rad-10">

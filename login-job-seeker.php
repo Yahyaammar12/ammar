@@ -27,11 +27,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     
         $_SESSION["first_name"] = $row['first_name'];
         $_SESSION["last_name"]=$row['last_name'];
-        $_SESSION["age"]=$row['age'];
+   
         $_SESSION["email"]=$row['email'];
         $_SESSION["city"]=$row['city'];
         $_SESSION["phone_number"]=$row["phone_number"];
-        
+        $_SESSION["mot_de_passe"]=$row["mot_de_passe"];
         
         $_SESSION["cin_image"]=$row['cin_image'];
         $_SESSION["email"]=$row['email'];
