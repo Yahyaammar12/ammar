@@ -235,24 +235,28 @@ session_start();
                             </div>
                         
                         <div class="projects">
-                                <h3>Projects</h3>
+                                
                                 <div class="projects_data">
                                     <div class="data">
-                                        <h4>Recent</h4>
-                                        <p>Lorem ipsum dolor sit amet.</p>
+                                        <h4>City</h4>
+                                        <p><?= $_SESSION["city"] ?></p>
                                     </div>
-                                    <div class="data">
-                                    <h4>Most Viewed</h4>
-                                        <p>dolor sit amet.</p>
-                                </div>
+                                    
                                 </div>
                             </div>
                         
                             <div class="social_media">
                                 <ul>
+<<<<<<< HEAD
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+=======
+                                <li><a href="<?= $_SESSION['facebook']?>"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="<?= $_SESSION['twitter']?>"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="<?= $_SESSION['instagram']?>"><i class="fab fa-instagram"></i></a></li>
+>>>>>>> 7137e5a4c890a2f4e23abbff346aae4d1c98bb6c
                             </ul>
                         </div>
                         </div>
