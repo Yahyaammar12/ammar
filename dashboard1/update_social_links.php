@@ -25,15 +25,16 @@ $email = $_SESSION['email']; // Assuming 'email' is the key where the email is s
 // Check if the email exists in the social_media table
 $sql = "SELECT * FROM social_media WHERE email='$email'";
 $result = $conn->query($sql);
+ 
+$_SESSION["twitter"] = $twitter_link;
+$_SESSION["facebook"]=$facebook_link;
+$_SESSION["instagram"]=$instagram_link;
+$_SESSION["linkedin"]=$linkedin_link;
 if ($result->num_rows > 0) {
     // Email exists, update the record
     $sql_update = "UPDATE social_media SET twitter='$twitter_link', facebook='$facebook_link', linkedin='$linkedin_link', instagram='$instagram_link' WHERE email='$email'";
     $row = $result->fetch_assoc();
-    
-    $_SESSION["twitter"] = $twitter_link;
-    $_SESSION["facebook"]=$facebook_link;
-    $_SESSION["instagram"]=$instagram_link;
-    $_SESSION["linkedin"]=$linkedin_link;
+   
 
     if ($conn->query($sql_update) === TRUE) {
         header("Location: myprofile.html");
