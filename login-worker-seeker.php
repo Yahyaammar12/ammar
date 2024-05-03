@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         setcookie('companyData', $jsonData, time() + (86400 * 30), "/");
         header('Location: /tpweb/dashboard1/index-worker-seeker.html');
       
-        header('Location: /webproject/dashboard1/index-worker-seeker.html');
+       
       
         exit();
     } else {
