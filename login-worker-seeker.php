@@ -1,3 +1,4 @@
+
 <?php
 session_start(); 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
@@ -23,10 +24,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     if($result->num_rows == 1){
         $row = $result->fetch_assoc();
-        $_SESSION["first_name"] = $row['full_name'];
-        
-        $_SESSION["cin_image"]=$row['manager_cin_image'];
-   
+        $_SESSION["full_name"] = $row['full_name'];
+        $_SESSION["manager_cin_image"]=$row['manager_cin_image'];
+        $_SESSION["email"]=$row['email'];
+        $_SESSION["city"]=$row['city'];
+        $_SESSION["phone_number"]=$row["phone_number"];
+        $_SESSION["mot_de_passe"]=$row["mot_de_passe"];
         $firstname=$row['full_name'];
         $managercinimg=$row['manager_cin_image'];
         $data = array(
