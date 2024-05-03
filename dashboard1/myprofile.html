@@ -80,6 +80,13 @@ if(isset($_SESSION['twitter'])) {
     $twitterUrl = '#';
 }
 
+if(isset($_SESSION['linkedin'])) {
+    $linkedinUrl = $_SESSION['linkedin'];
+} else {
+    
+    $linkedinUrl = '#';
+}
+
 
 
 ?>
@@ -274,6 +281,7 @@ if(isset($_SESSION['twitter'])) {
                                     <li><a href="<?= $facebookUrl ?>"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="<?= $twitterUrl ?>"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="<?= $instagramUrl ?>"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="<?= $linkedinUrl ?>"><i class="fab fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                         </div>
