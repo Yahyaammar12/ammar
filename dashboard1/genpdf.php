@@ -64,7 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Add title
     $pdf->SetFont('Arial', 'B', 20); // Increase font size for title
     $pdf->Cell(0, 10, 'Curriculum Vitae', 0, 1, 'C');
-
+    if (isset($photo_name)) {
+        $pdf->Image('C:/xampp/htdocs/tpweb/lesCINSworkers/' . $photo_name, 150, 40, 40);
+    }
     // Reset font color to default (black)
    
     $pdf->SetTextColor(0, 156, 255); // Set font color to #009CFF for name
@@ -105,18 +107,16 @@ $pdf->SetTextColor(0, 156, 255); // Set font color to #009CFF for name
     $pdf->SetTextColor(0, 156, 255); // Set font color to #009CFF for name
     $pdf->Cell(40, 15, "Profile:", 0, 0,'R');
     $pdf->SetTextColor(0); // Reset font color to black
-    $pdf->Cell(0, 15, $profile, 0, 1);
+    $pdf->MultiCell(0, 15, $profile, 0, 1);
     $pdf->SetTextColor(0, 156, 255); // Set font color to #009CFF for name
-    $pdf->Cell(40, 15, "Skills:", 0, 0,'R');
+    $pdf->MultiCell(40, 15, "Skills:", 0, 0,'R');
     $pdf->SetTextColor(0); // Reset font color to black
     $pdf->Cell(0, 15, $skills, 0, 1);
 
 
 
     // Add photo
-    if (isset($photo_name)) {
-        $pdf->Image('C:/xampp/htdocs/tpweb/lesCINSworkers/' . $photo_name, 150, 40, 40);
-    }
+   
 
     // Output PDF to browser
     $pdf->Output('CV.pdf', 'D'); // 'D' for download, you can change this as needed

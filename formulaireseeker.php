@@ -36,11 +36,7 @@ if (mysqli_num_rows($result) > 0) {
     exit;}
 else{
 
-<<<<<<< HEAD
- 
-=======
   
->>>>>>> e4a4fd7f874c60c9d5d6469c67bdbf283b1466d2
     $sql= "INSERT INTO reg_seeker (full_name, phone_number,email, mot_de_passe, city, manager_first_name, manager_last_name,manager_cin_image)
             VALUES ('$full_name','$phone_number','$email','$pass','$city','$manager_first_name','$manager_last_name','$pname')";
             
