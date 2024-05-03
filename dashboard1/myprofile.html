@@ -58,7 +58,37 @@
 </head>
 <?php
 session_start();
+if(isset($_SESSION['facebook'])) {
+    $facebookUrl = $_SESSION['facebook'];
+} else {
+    // Set $facebookUrl to '#' if $_SESSION['facebook'] is not set
+    $facebookUrl = '#';
+}
+
+if(isset($_SESSION['instagram'])) {
+    $instagramUrl = $_SESSION['instagram'];
+} else {
     
+    $instagramUrl = '#';
+}
+
+
+if(isset($_SESSION['twitter'])) {
+    $twitterUrl = $_SESSION['twitter'];
+} else {
+    
+    $twitterUrl = '#';
+}
+
+if(isset($_SESSION['linkedin'])) {
+    $linkedinUrl = $_SESSION['linkedin'];
+} else {
+    
+    $linkedinUrl = '#';
+}
+
+
+
 ?>
 <body>
     
@@ -247,9 +277,11 @@ session_start();
                         
                             <div class="social_media">
                                 <ul>
-                                <li><a href="<?= $_SESSION['facebook']?>"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="<?= $_SESSION['twitter']?>"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="<?= $_SESSION['instagram']?>"><i class="fab fa-instagram"></i></a></li>
+                                    
+                                    <li><a href="<?= $facebookUrl ?>"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="<?= $twitterUrl ?>"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="<?= $instagramUrl ?>"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="<?= $linkedinUrl ?>"><i class="fab fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                         </div>
