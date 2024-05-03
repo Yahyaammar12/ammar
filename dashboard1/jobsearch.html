@@ -47,13 +47,34 @@
 <!--slick.css-->
 <link rel="stylesheet" href="./css/slick.css">
 <link rel="stylesheet" href="./css/slick-theme.css">
-
 <!--style.css-->
 <link rel="stylesheet" href="./css/stylev2.css">
 
 <!--responsive.css-->
 <link rel="stylesheet" href="./css/responsive.css">
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var securityLink = document.querySelector('a[href="#security"]');
+        if (securityLink) {
+            securityLink.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent default anchor behavior
+                var targetElement = document.getElementById('security');
+                if (targetElement) {
+                    var offsetTop = targetElement.offsetTop;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: "smooth" // Smooth scrolling
+                    });
+                }
+            });
+        }
+    });
+</script>
+
+
+
+
 </head>
 
 <?php
@@ -93,15 +114,15 @@ session_start();
             <div class="navbar-nav w-100">
                 <a href="index-job-seeker.html" class="nav-item nav-link "><i class="fas fa-home icon me-2"></i>Home</a>
                
-                <a href="jobsearch.html" class="nav-item nav-link active"><i class="fas fa-search icon me-2"></i>Job Search</a>
-                <a href="notifications.html" class="nav-item nav-link"><i class="fas fa-bell icon me-2"></i>Notifications</a>
+                <a href="jobsearch.html" class="nav-item nav-link active"><i class="fas fa-search icon me-2"></i>Opportunities</a>
+                <!-- <a href="notifications.html" class="nav-item nav-link"><i class="fas fa-bell icon me-2"></i>Notifications</a> -->
                 <a href="resume.html" class="nav-item nav-link"><i class="far fa-file icon me-2"></i>Resume Builder</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-cog icon me-2"></i>Settings</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="button.html" class="dropdown-item">Profile Management</a>
-                        <a href="typography.html" class="dropdown-item">Security</a>
-                        <a href="element.html" class="dropdown-item">Language</a>
+                        <a href="settings.html" class="dropdown-item">Profile Management</a>
+                        <a href="settings.html#security" class="dropdown-item">Security</a>
+                        
                     </div>
                 </div>
                 <a href="logout.php" class="nav-item nav-link"><i class="fas fa-sign-out-alt icon me-2"></i>Logout</a>
@@ -179,9 +200,9 @@ session_start();
                             <span class="d-none d-lg-inline-flex"><?=$_SESSION["first_name"]." ".$_SESSION["last_name"]?></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="myprofile.html" class="dropdown-item">My Profile</a>
+                            <a href="settings.html" class="dropdown-item">Settings</a>
+                            <a href="logout.php" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -191,10 +212,10 @@ session_start();
 
            
             <br>
-            <section id="explore" class="explore">
+            <section id="explore" class="explore p-5">
                 <div class="container">
                     <div class="section-header">
-                        <h2> Offers </h2>
+                        <h2> Opportunities </h2>
                         <p>Explore New experience</p>
                     </div><!--/.section-header-->
                     <div class="explore-content">
@@ -518,16 +539,16 @@ session_start();
                             <div class="col-md-4 col-sm-6">
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
-                                        <img src="./img/final_600xgeiser.webp" alt="explore image">
+                                        <img src="./img/actia.jpg" alt="explore image">
                                         <div class="single-explore-img-info">
                                             <button onclick="window.location.href='#'">best rated</button>
                                       
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-5">
-                                        <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
+                                        <h2><a href="#">Actia engineering services /a></h2>
                                         <p class="explore-rating-price">
-                                            <span class="explore-rating">5.5</span>
+                                            <span class="explore-rating">8.5</span>
                                             <a href="#"> 15 ratings</a> 
                                             <span class="explore-price-box">
                                                 form
@@ -540,13 +561,13 @@ session_start();
                                                 <div class="col-sm-2">
                                                     <div class="explore-person-img">
                                                         <a href="#">
-                                                            <img src="./img/final_600xgeiser.webp" alt="explore person">
+                                                            <img src="./img/actia.jpg" alt="explore person">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-11">
                                                     <p>
-                                                        Services de securité informatiques .... 
+                                                        ACTIA Engineering Services, créée en 2005 sous le nom d’ARDIA, est l’un des centres de R&D du Groupe au coeur de la division du même nom. La Division ENGINEERING SERVICES assure la conception et le développement de produits et de systèmes embarqués, augmentés de services logiciels. Elle se structure autour de différents sites à Tunis, à Sfax et en France (en cours de création). 
                                                     </p>
                                                 </div>
                                             </div>
@@ -571,14 +592,14 @@ session_start();
                             <div class="col-md-4 col-sm-6">
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
-                                        <img src="./img/final_600xgeiser.webp" alt="explore image">
+                                        <img src="./img/sofrecom.png" alt="explore image">
                                         <div class="single-explore-img-info">
                                             <button onclick="window.location.href='#'">best rated</button>
                                       
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-5">
-                                        <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
+                                        <h2><a href="#">Sofrecom</a></h2>
                                         <p class="explore-rating-price">
                                             <span class="explore-rating">5.5</span>
                                             <a href="#"> 15 ratings</a> 
@@ -593,13 +614,13 @@ session_start();
                                                 <div class="col-sm-2">
                                                     <div class="explore-person-img">
                                                         <a href="#">
-                                                            <img src="./img/final_600xgeiser.webp" alt="explore person">
+                                                            <img src="./img/sofrecom.png" alt="explore person">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-11">
                                                     <p>
-                                                        Services de securité informatiques .... 
+                                                        We are supporting the development and the transformation of operators, governments and international institutions. They represent the main telecoms players
                                                     </p>
                                                 </div>
                                             </div>
@@ -624,14 +645,14 @@ session_start();
                             <div class="col-md-4 col-sm-6">
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
-                                        <img src="./img/final_600xgeiser.webp" alt="explore image">
+                                        <img src="./img/supermousse.jpg" alt="explore image">
                                         <div class="single-explore-img-info">
                                             <button onclick="window.location.href='#'">best rated</button>
                                       
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-5">
-                                        <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
+                                        <h2><a href="#">Super Mousse -Super Siesta </a></h2>
                                         <p class="explore-rating-price">
                                             <span class="explore-rating">5.5</span>
                                             <a href="#"> 15 ratings</a> 
@@ -646,13 +667,13 @@ session_start();
                                                 <div class="col-sm-2">
                                                     <div class="explore-person-img">
                                                         <a href="#">
-                                                            <img src="./img/final_600xgeiser.webp" alt="explore person">
+                                                            <img src="./img/supermousse.jpg" alt="explore person">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-11">
                                                     <p>
-                                                        Services de securité informatiques .... 
+                                                        a7la si imed chakroun 
                                                     </p>
                                                 </div>
                                             </div>
@@ -677,14 +698,14 @@ session_start();
                             <div class="col-md-4 col-sm-6">
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
-                                        <img src="./img/final_600xgeiser.webp" alt="explore image">
+                                        <img src="./img/chahia.png" alt="explore image">
                                         <div class="single-explore-img-info">
                                             <button onclick="window.location.href='#'">best rated</button>
                                       
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-5">
-                                        <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
+                                        <h2><a href="#">société tunisienne spécialisée dans l'accouvage, l'élevage et la commercialisation des produits avicoles.</a></h2>
                                         <p class="explore-rating-price">
                                             <span class="explore-rating">5.5</span>
                                             <a href="#"> 15 ratings</a> 
@@ -692,20 +713,20 @@ session_start();
                                                 form
                                                 <span class="explore-price">5k$-6k$ salary</span>
                                             </span>
-                                             <a href="#">ENGINEER</a>
+                                             <a href="#">DAJEJ</a>
                                         </p>
                                         <div class="explore-person">
                                             <div class="row">
                                                 <div class="col-sm-2">
                                                     <div class="explore-person-img">
                                                         <a href="#">
-                                                            <img src="./img/final_600xgeiser.webp" alt="explore person">
+                                                            <img src="./img/chahia.png" alt="explore person">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-11">
                                                     <p>
-                                                        Services de securité informatiques .... 
+                                                        Alliant modernité et tradition, Chahia groupe combine un savoir-faire traditionnel du terroir Tunisien et des méthodes de fabrication à la pointe de la technologie.
                                                     </p>
                                                 </div>
                                             </div>
@@ -730,14 +751,14 @@ session_start();
                             <div class="col-md-4 col-sm-6">
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
-                                        <img src="./img/final_600xgeiser.webp" alt="explore image">
+                                        <img src="./img/confortex.jpg" alt="explore image">
                                         <div class="single-explore-img-info">
                                             <button onclick="window.location.href='#'">best rated</button>
                                       
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-5">
-                                        <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
+                                        <h2><a href="#">Société de Matelas </a></h2>
                                         <p class="explore-rating-price">
                                             <span class="explore-rating">5.5</span>
                                             <a href="#"> 15 ratings</a> 
@@ -752,13 +773,13 @@ session_start();
                                                 <div class="col-sm-2">
                                                     <div class="explore-person-img">
                                                         <a href="#">
-                                                            <img src="./img/final_600xgeiser.webp" alt="explore person">
+                                                            <img src="./img/confortex.jpg" alt="explore person">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-11">
                                                     <p>
-                                                        Services de securité informatiques .... 
+                                                        supermousse😡😡😡😡
                                                     </p>
                                                 </div>
                                             </div>
@@ -783,14 +804,14 @@ session_start();
                             <div class="col-md-4 col-sm-6">
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
-                                        <img src="./img/final_600xgeiser.webp" alt="explore image">
+                                        <img src="./img/total.png" alt="explore image">
                                         <div class="single-explore-img-info">
                                             <button onclick="window.location.href='#'">best rated</button>
                                       
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-5">
-                                        <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
+                                        <h2><a href="#">TOTAL ENERGIES</a></h2>
                                         <p class="explore-rating-price">
                                             <span class="explore-rating">5.5</span>
                                             <a href="#"> 15 ratings</a> 
@@ -798,20 +819,20 @@ session_start();
                                                 form
                                                 <span class="explore-price">5k$-6k$ salary</span>
                                             </span>
-                                             <a href="#">ENGINEER</a>
+                                             <a href="#">OUVRIER</a>
                                         </p>
                                         <div class="explore-person">
                                             <div class="row">
                                                 <div class="col-sm-2">
                                                     <div class="explore-person-img">
                                                         <a href="#">
-                                                            <img src="./img/final_600xgeiser.webp" alt="explore person">
+                                                            <img src="./img/total.png" alt="explore person">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-11">
                                                     <p>
-                                                        Services de securité informatiques .... 
+                                                        production et de fourniture d’hydrocarbures et d’autres sources d’énergies :
                                                     </p>
                                                 </div>
                                             </div>
@@ -836,14 +857,14 @@ session_start();
                             <div class="col-md-4 col-sm-6">
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
-                                        <img src="./img/final_600xgeiser.webp" alt="explore image">
+                                        <img src="./img/dailyn.jpg" alt="explore image">
                                         <div class="single-explore-img-info">
                                             <button onclick="window.location.href='#'">best rated</button>
                                       
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-5">
-                                        <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
+                                        <h2><a href="#">Fabrication de produits alimentaires et boissons</a></h2>
                                         <p class="explore-rating-price">
                                             <span class="explore-rating">5.5</span>
                                             <a href="#"> 15 ratings</a> 
@@ -858,13 +879,13 @@ session_start();
                                                 <div class="col-sm-2">
                                                     <div class="explore-person-img">
                                                         <a href="#">
-                                                            <img src="./img/final_600xgeiser.webp" alt="explore person">
+                                                            <img src="./img/dailyn.jpg" alt="explore person">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-11">
                                                     <p>
-                                                        Services de securité informatiques .... 
+                                                        Nous avons concocté pour vous les recettes les plus savoureuses à base des meilleurs ingrédients : du chocolat suisse riche en cacao, une teneur en fruits supérieure à 30%, du bon lait, du yaourt onctueux et du vrai beurre pour vous offrir des produits gourmands, sains, goûteux et de très haute qualité.
                                                     </p>
                                                 </div>
                                             </div>
@@ -889,14 +910,14 @@ session_start();
                             <div class="col-md-4 col-sm-6">
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
-                                        <img src="./img/final_600xgeiser.webp" alt="explore image">
+                                        <img src="./img/novita.png" alt="explore image">
                                         <div class="single-explore-img-info">
                                             <button onclick="window.location.href='#'">best rated</button>
                                       
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-5">
-                                        <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
+                                        <h2><a href="#">Ouvrages metammiques et d'exhibition </a></h2>
                                         <p class="explore-rating-price">
                                             <span class="explore-rating">5.5</span>
                                             <a href="#"> 15 ratings</a> 
@@ -911,13 +932,13 @@ session_start();
                                                 <div class="col-sm-2">
                                                     <div class="explore-person-img">
                                                         <a href="#">
-                                                            <img src="./img/final_600xgeiser.webp" alt="explore person">
+                                                            <img src="./img/novita.png" alt="explore person">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-11">
                                                     <p>
-                                                        Services de securité informatiques .... 
+                                                        Novita is the largest manufacturer of craft yarns in the Nordic countries
                                                     </p>
                                                 </div>
                                             </div>
@@ -942,14 +963,14 @@ session_start();
                             <div class="col-md-4 col-sm-6">
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
-                                        <img src="./img/final_600xgeiser.webp" alt="explore image">
+                                        <img src="./img/sopal.png" alt="explore image">
                                         <div class="single-explore-img-info">
                                             <button onclick="window.location.href='#'">best rated</button>
                                       
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-5">
-                                        <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
+                                        <h2><a href="#"> Fabrication d'articles en laiton</a></h2>
                                         <p class="explore-rating-price">
                                             <span class="explore-rating">5.5</span>
                                             <a href="#"> 15 ratings</a> 
@@ -964,13 +985,13 @@ session_start();
                                                 <div class="col-sm-2">
                                                     <div class="explore-person-img">
                                                         <a href="#">
-                                                            <img src="./img/final_600xgeiser.webp" alt="explore person">
+                                                            <img src="./img/sopal.png" alt="explore person">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-11">
                                                     <p>
-                                                        Services de securité informatiques .... 
+                                                        est spécialisée dans la Fabrication d'articles en laiton dans les secteurs du bâtiment relatifs aux domaines de la plomberie, du bain et cuisines, du branchement d'eau et du branchement gaz.
                                                     </p>
                                                 </div>
                                             </div>

@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
 /********** Template CSS **********/
+body{
+    text-transform: capitalize;
+}
 :root {
     --primary: #009CFF;
     --light: #F3F6F9;
@@ -261,6 +266,7 @@
     padding-left: 0;
 }
 
+<<<<<<< HEAD
 .section-title h1::before,
 .section-title h1::after {
     position: absolute;
@@ -285,3 +291,6 @@
 .was p{
     color: blue;
 }
+=======
+
+>>>>>>> 5894a91497391562551ea48280e568c1466c2322

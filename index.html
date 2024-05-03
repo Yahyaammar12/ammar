@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_SESSION['last_name'])) {
+    // If not logged in, redirect to the login page
+	header('Location: /tpweb/dashboard1/index-job-seeker.html');
+    exit;
+}else if (isset($_SESSION['first_name'])) {
+    // If not logged in, redirect to the login page
+	header('Location: /tpweb/dashboard1/index-worker-seeker.html');
+    exit;
+} ?>
+
 <!doctype html>
 <html class="no-js" lang="zxx" >
     <head>
@@ -227,7 +239,7 @@
 
 
 		<!-- Slider Area -->
-		<section class="slider">
+		<section class="slider mb-5">
 			<div class="hero-slider">
 				<!-- Start Single Slider -->
 				<div class="single-slider" style="background-image:url('img/slider2.jpg')">
@@ -288,7 +300,7 @@
 		<!--/ End Slider Area -->
 		
 		<!-- Start Schedule Area -->
-		<section class="schedule" >
+		<section class="schedule mb-5" >
 			<div class="container">
 				<div class="schedule-inner">
 					<div class="row">
@@ -632,6 +644,12 @@
 			</div>
 		</div>
 		<!--/Ens clients -->
+
+
+		
+
+
+
 		
 		
 		<!-- Footer Area -->
