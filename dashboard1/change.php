@@ -25,8 +25,7 @@ function changePassword($oldPassword, $newPassword) {
     $query = "UPDATE registration SET mot_de_passe = '$newPassword' WHERE email = '$email'";
     $_SESSION["mot_de_passe"]=$newPassword;
     if (mysqli_query($conn, $query)) {
-        echo "Password updated successfully!";
-        echo($_SESSION["mot_de_passe"]);
+        header("Location: index-job-seeker.html");
     } else {
         echo "Error updating password: " . mysqli_error($conn);
     }
@@ -54,8 +53,7 @@ function changeEmail($oldEmail, $newEmail) {
     $_SESSION["email"]=$newEmail;
    
     if (mysqli_query($conn, $query)) {
-        echo "email updated successfully!";
-        echo($_SESSION["email"]);
+        header("Location: index-job-seeker.html");
     } else {
         echo "Error updating password: " . mysqli_error($conn);
     }
