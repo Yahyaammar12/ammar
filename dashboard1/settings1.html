@@ -9,13 +9,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icon Font Stylesheet -->
@@ -30,8 +30,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/styles.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <!-- <link rel="stylesheet" href="css/all.min1.css" /> -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/framework.css" />
+    <link rel="stylesheet" href="css/master.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     <script>
@@ -58,37 +66,7 @@
 </head>
 <?php
 session_start();
-if(isset($_SESSION['facebook'])) {
-    $facebookUrl = $_SESSION['facebook'];
-} else {
-    // Set $facebookUrl to '#' if $_SESSION['facebook'] is not set
-    $facebookUrl = '#';
-}
-
-if(isset($_SESSION['instagram'])) {
-    $instagramUrl = $_SESSION['instagram'];
-} else {
     
-    $instagramUrl = '#';
-}
-
-
-if(isset($_SESSION['twitter'])) {
-    $twitterUrl = $_SESSION['twitter'];
-} else {
-    
-    $twitterUrl = '#';
-}
-
-if(isset($_SESSION['linkedin'])) {
-    $linkedinUrl = $_SESSION['linkedin'];
-} else {
-    
-    $linkedinUrl = '#';
-}
-
-
-
 ?>
 <body>
     
@@ -144,7 +122,6 @@ if(isset($_SESSION['linkedin'])) {
 
         <!-- Content Start -->
         <div class="content">
-            <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
                 <a href="index-worker-seeker.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fas fa-home icon"></i></h2>
@@ -234,110 +211,183 @@ if(isset($_SESSION['linkedin'])) {
             </nav>
             <!-- Navbar End -->
 
+         
+
+        <div class="container-fluid pt-4 px-4">
+            <h1 class="p-relative">Settings</h1>
+            <div class="row g-4">
+
+
+                    <div class="settings-page m-20 d-grid gap-20">
+                    <!-- Start Settings Box -->
+                        <div class="p-20 bg-white rad-10">
+                            <div class="bg-light rounded h-100 p-4">
+                            <h2 class="mt-0 mb-10">Site Control</h2>
+                            <p class="mt-0 mb-20 c-grey fs-15">Control The Website If There Is Maintenance</p>
+                            <div class="mb-15 between-flex">
+                            <div>
+                                <span>Website Control</span>
+                                <p class="c-grey mt-5 mb-0 fs-13">Open/Close Website And Type The Reason</p>
+                            </div>
+                            <div>
+                                <label>
+                                <input class="toggle-checkbox" type="checkbox" checked />
+                                <div class="toggle-switch"></div>
+                                </label>
+                            </div>
+                            </div>
+                            <textarea class="close-message p-10 rad-6 d-block w-full" placeholder="Close Message Content"></textarea>
+                        </div>
+                    </div>
+                    <!-- End Settings Box -->
+                    <!-- Start Settings Box -->
+                    <div class="p-20 bg-white rad-10">
+                        <form action="settings.php" method="post"> <!-- Replace "/submit_form" with your form submission URL -->
+                            <input type="hidden" name="redirect_url" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+    
+                            <div class="bg-light rounded h-100 p-4">
+                                <h2 class="mt-0 mb-10">General Info</h2>
+                                <p class="mt-0 mb-20 c-grey fs-15">General Information About Your Account</p>
+                                <div class="mb-15">
+                                    <label class="fs-14 c-grey d-block mb-10" for="first">First Name</label>
+                                    <input
+                                        class="b-none border-ccc p-10 rad-6 d-block w-full"
+                                        type="text"
+                                        id="first"
+                                        name="first_name" 
+                                        placeholder="First Name"
+                                    />
+                                </div>
+                                <div class="mb-15">
+                                    <label class="fs-14 c-grey d-block mb-10" for="last">Last Name</label>
+                                    <input
+                                        class="b-none border-ccc p-10 rad-6 d-block w-full"
+                                        id="last"
+                                        name="last_name" 
+                                        type="text"
+                                        placeholder="Last Name"
+                                    />
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary m-2">Change</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                
+
+                
+                
+                <!-- End Settings Box -->
+                <!-- Start Settings Box -->
+                <div class="p-20 bg-white rad-10" id="security">
+                    <form id="password_form" method="post" action="change.php">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h2 class="mt-0 mb-10">Security Info</h2>
+                            <p class="mt-0 mb-20 c-grey fs-15">Security Information About Your Account</p>
+                            <div class="sec-box mb-15 between-flex">
+                                <div class="mb-15">
+                                    <div class="mb-10">
+                                        <label class="fs-14 c-grey d-block mb-10" for="oldpassword">Tap your old Password</label>
+                                        <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="password" id="oldpassword"
+                                            name="oldpassword" placeholder="Old Password" />
+                                    </div>
+                                    <div class="mb-10">
+                                        <label class="fs-14 c-grey d-block mb-10" for="password"> Tap your new Password</label>
+                                        <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="password" id="password"
+                                            name="password" placeholder="New Password" />
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary m-2" id="change_password" name="change_password">Change
+                                    Password</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="email_form" method="post" action="change.php">
+                        <div class="bg-light rounded h-100 p-4">
+                            <div class="sec-box mb-15 between-flex">
+                                <div class="mb-15">
+                                    <div class="mb-10">
+                                        <label class="fs-14 c-grey d-block mb-10" for="oldemail">Your Old Email</label>
+                                        <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="email" id="oldemail"
+                                            name="oldemail" placeholder="Old Email" />
+                                    </div>
+                                    <div class="mb-10">
+                                        <label class="fs-14 c-grey d-block mb-10" for="email">Email</label>
+                                        <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="email" id="email"
+                                            name="email" placeholder="New Email" />
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary m-2" id="change_email" name="change_email">Change
+                                    Email</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="sec-box mb-15 between-flex">
+                        <div>
+                            <span>Two-Factor Authentication</span>
+                            <p class="c-grey mt-5 mb-0 fs-13">Enable/Disable The Feature</p>
+                        </div>
+                        <label>
+                            <input class="toggle-checkbox" type="checkbox" checked />
+                            <div class="toggle-switch"></div>
+                        </label>
+                    </div>
+                    <div class="sec-box between-flex">
+                        <div>
+                            <span>Devices</span>
+                            <p class="c-grey mt-5 mb-0 fs-13">Check The Login Devices List</p>
+                        </div>
+                        <a class="bg-eee c-black btn-shape" href="#">Devices</a>
+                    </div>
+                </div>
+                
+                <!-- End Settings Box -->
+                <!-- Start Settings Box -->
+                <div class="social-boxes p-20 bg-white rad-10">
+                    <form action="update_social_links.php" method="post"> <!-- Specify the action attribute with the URL of your PHP script -->
+                        <input type="hidden" name="redirect_url" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
+    
+                        <div class="bg-light rounded h-100 p-4">
+                            <h2 class="mt-0 mb-10">Social Info</h2>
+                            <p class="mt-0 mb-20 c-grey fs-15">Social Media Information</p>
+                            <div class="d-flex align-center mb-15">
+                                <i class="fa-brands fa-twitter center-flex c-grey"></i>
+                                <input class="w-full" type="text" name="twitter_link" placeholder="Twitter Link" />
+                            </div>
+                            <div class="d-flex align-center mb-15">
+                                <i class="fa-brands fa-facebook-f center-flex c-grey"></i>
+                                <input class="w-full" type="text" name="facebook_link" placeholder="Facebook Link" />
+                            </div>
+                            <div class="d-flex align-center mb-15">
+                                <i class="fa-brands fa-linkedin center-flex c-grey"></i>
+                                <input class="w-full" type="text" name="linkedin_link" placeholder="Linkedin Link" />
+                            </div>
+                            <div class="d-flex align-center">
+                                <i class="fa-brands fa-instagram center-flex c-grey"></i>
+                                <input class="w-full" type="text" name="instagram_link" placeholder="Instagram Link" />
+                            </div>
+                            <button type="submit" class="btn btn-primary m-3">Change</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- End Settings Box -->
+                
+                
+                
+                </div>
+            </div>  
+        </div>
+
+            
 
 
             
 
 
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded p-4">
-                    <div class="wrapper">
-                        <div class="left">
-                            <img src=" ../lesCINSworkers/<?=$_SESSION['cin_image'] ?>" 
-                            alt="user" width="100">
-                            <h4><?=$_SESSION["first_name"]." ".$_SESSION["last_name"] ?></h4>
-                            <p>Worker </p>
-                        </div>
-                        <div class="right">
-                            <div class="info">
-                                <h3>Information</h3>
-                                <div class="info_data">
-                                    <div class="data">
-                                        <h4>Email</h4>
-                                        <p><?= $_SESSION["email"] ?></p>
-                                    </div>
-                                    <div class="data">
-                                    <h4>Phone</h4>
-                                        <p><?=  $_SESSION["phone_number"] ?></p>
-                                </div>
-                                </div>
-                            </div>
-                        
-                        <div class="projects">
-                                
-                                <div class="projects_data">
-                                    <div class="data">
-                                        <h4>City</h4>
-                                        <p><?= $_SESSION["city"] ?></p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        
-                            <div class="social_media">
-                                <ul>
-                                    
-                                    <li><a href="<?= $facebookUrl ?>"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="<?= $twitterUrl ?>"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="<?= $instagramUrl ?>"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="<?= $linkedinUrl ?>"><i class="fab fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
 
-                </div>
-
-
-
-
-
-            </div>
-            <!-- Sales Chart End -->
-
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fas fa-clock icon fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Posted Today</p>
-                                <h6 class="mb-0">34</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fas fa-thumbs-up icon fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Likes</p>
-                                <h6 class="mb-0">234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fas fa-envelope icon fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Requests</p>
-                                <h6 class="mb-0">74</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fas fa-eye icon fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Vues</p>
-                                <h6 class="mb-0">142</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sale & Revenue End -->
 
 
            
