@@ -28,13 +28,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $_SESSION["first_name"] = $row['first_name'];
         $_SESSION["last_name"]=$row['last_name'];
         $_SESSION["cin_image"]=$row['cin_image'];
+        $_SESSION["email"]=$row['email'];
+        $_SESSION["phone_number"]=$row['phone_number'];
         $firstname=$row['first_name'];
         $lastname=$row['last_name'];
         $cinimg=$row['cin_image'];
+        $email=$row['email'];
+        $phone=$row['phone_number'];
         $data = array(
             'first-name' => $firstname,
             'last-name' => $lastname,
-            'cin-img' => $cinimg
+            'cin-img' => $cinimg,
+            'e-mail' =>$email,
+            'phone-number' => $phone,
+
         );
         $jsonData = json_encode($data);
         setcookie('personData', $jsonData, time() + (86400 * 30), "/");
