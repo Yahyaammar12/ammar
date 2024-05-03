@@ -242,14 +242,24 @@ session_start();
                     <!-- End Settings Box -->
                     <!-- Start Settings Box -->
                     <div class="p-20 bg-white rad-10">
-                        <form action="settings.php" method="post"> <!-- Replace "/submit_form" with your form submission URL -->
+                        <form action="settings1.php" method="post"> <!-- Replace "/submit_form" with your form submission URL -->
                             <input type="hidden" name="redirect_url" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
     
                             <div class="bg-light rounded h-100 p-4">
                                 <h2 class="mt-0 mb-10">General Info</h2>
                                 <p class="mt-0 mb-20 c-grey fs-15">General Information About Your Account</p>
                                 <div class="mb-15">
-                                    <label class="fs-14 c-grey d-block mb-10" for="first">First Name</label>
+                                    <label class="fs-14 c-grey d-block mb-10" for="full">Full Name</label>
+                                    <input
+                                        class="b-none border-ccc p-10 rad-6 d-block w-full"
+                                        type="text"
+                                        id="full"
+                                        name="full_name" 
+                                        placeholder="Full Name"
+                                    />
+                                </div>
+                                <div class="mb-15">
+                                    <label class="fs-14 c-grey d-block mb-10" for="first">Manager First Name</label>
                                     <input
                                         class="b-none border-ccc p-10 rad-6 d-block w-full"
                                         type="text"
@@ -259,7 +269,7 @@ session_start();
                                     />
                                 </div>
                                 <div class="mb-15">
-                                    <label class="fs-14 c-grey d-block mb-10" for="last">Last Name</label>
+                                    <label class="fs-14 c-grey d-block mb-10" for="last">Manager Last Name</label>
                                     <input
                                         class="b-none border-ccc p-10 rad-6 d-block w-full"
                                         id="last"
@@ -346,7 +356,7 @@ session_start();
                 <!-- End Settings Box -->
                 <!-- Start Settings Box -->
                 <div class="social-boxes p-20 bg-white rad-10">
-                    <form action="update_social_links.php" method="post"> <!-- Specify the action attribute with the URL of your PHP script -->
+                    <form action="update_social_links1.php" method="post"> <!-- Specify the action attribute with the URL of your PHP script -->
                         <input type="hidden" name="redirect_url" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
     
                         <div class="bg-light rounded h-100 p-4">
