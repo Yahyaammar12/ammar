@@ -96,6 +96,8 @@ session_start();
                 
                     <a href="workersearch.html" class="nav-item nav-link"><i class="fas fa-search icon me-2"></i>Worker Search</a>
                     <!-- <a href="notification-worker-seeker.html" class="nav-item nav-link"><i class="fas fa-bell icon me-2"></i>Notifications</a> -->
+
+                    <a href="add-company-job.html" class="nav-item nav-link"><i class="fas fa-search icon me-2"></i>Add Announce</a>
                     
                     <div class="nav-item dropdown">
                         <a href="settings1.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-cog icon me-2"></i>Settings</a>
@@ -198,7 +200,7 @@ session_start();
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src=" ../lesCINSworkers/<?=$_SESSION['cin_image'] ?>" alt="" style="width: 40px; height: 40px;">
+                            <img class="rounded-circle me-lg-2" src=" ../lesCINSgerants/<?=$_SESSION['manager_cin_image'] ?>"  alt="" style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex"><?=$_SESSION["first_name"]." ".$_SESSION["last_name"]?></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -254,6 +256,12 @@ session_start();
                 </div>
             </form>
             <!-- Form End -->
+
+           
+
+
+
+
 <br>
 <br>
 
