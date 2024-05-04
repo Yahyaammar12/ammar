@@ -54,11 +54,11 @@ session_start();
             
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                    <img class="rounded-circle" src="../lesCINSgerants/<?= $_SESSION['cin_image']?>" alt="" style="width: 40px; height: 40px;">
+                    <img class="rounded-circle" src="../lesCINSgerants/<?= $_SESSION['manager_cin_image']?>" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0"> <?=  $_SESSION['first_name']?></h6>
+                        <h6 class="mb-0"> <?=  $_SESSION['full_name']?></h6>
                         <span>Company</span>
                     </div>
                 </div>
@@ -170,8 +170,8 @@ session_start();
                     </div> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src=" ../lesCINSgerants/<?=$_SESSION['cin_image'] ?>" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex"><?=$_SESSION["first_name"]?></span>
+                            <img class="rounded-circle me-lg-2" src=" ../lesCINSgerants/<?=$_SESSION['manager_cin_image'] ?>" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex"><?=$_SESSION["full_name"]?></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="myprofile1.html" class="dropdown-item">My Profile</a>
@@ -450,23 +450,119 @@ session_start();
             <!-- Widgets End -->
 
 
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        </br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
-                    </div>
-                </div>
+            <footer
+            class="text-center text-lg-start text-white"
+            style="background-color: #e3e3e6"
+            >
+            <!-- Section: Social media -->
+            <section
+            class="d-flex justify-content-between p-4"
+            style="background-color: #009CFF"
+            >
+            <!-- Left -->
+            <div class="me-5">
+            <span>Get connected with us on social networks:</span>
             </div>
-            <!-- Footer End -->
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+            </a>
+            </div>
+            <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class="">
+            <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold"><span class="khedma-word">خدمة</span></h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #009CFF; height: 2px"
+                />
+                <p>At <span class="khedma-word">خدمة</span>, we're dedicated to connecting people and businesses seamlessly. Our platform simplifies the job search process and empowers businesses to find the right talent. Join us in shaping the future of work.</p>
+            </div>
+            <!-- Grid column -->
+
+            
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #009CFF; height: 2px"
+                />
+            <p>
+                <a href="index-job-seeker.html" class="text-white">Home</a>
+            </p>
+            <p>
+                <a href="jobsearch.html" class="text-white">Opportunities</a>
+            </p>
+            <p>
+                <a href="resume.html" class="text-white">Resume Builder</a>
+            </p>
+            <p>
+                <a href="settings.html" class="text-white">Settings</a>
+            </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #009CFF; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> INSAT, ARIANA, TUNISIE </p>
+            <p><i class="fas fa-envelope mr-3"></i> chakrounmino@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 216 52 519 087</p>
+            <p><i class="fas fa-print mr-3"></i> + 216 52 519 087</p>
+            </div>
+            <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+            </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Copyright -->
+            <div
+            class="text-center p-3"
+            style="background-color: rgba(0, 0, 0, 0.2)"
+            >
+            © Copyright 2024  |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">larma.com</a>
+            
+            </div>
+            <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
         </div>
         <!-- Content End -->
 

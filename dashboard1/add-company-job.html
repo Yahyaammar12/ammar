@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,9 +28,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/styles.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -53,56 +49,37 @@
         });
     </script>
     
-    
+
+
+
+
+
 
 </head>
 <?php
 session_start();
-if(isset($_SESSION['facebook'])) {
-    $facebookUrl = $_SESSION['facebook'];
-} else {
-    // Set $facebookUrl to '#' if $_SESSION['facebook'] is not set
-    $facebookUrl = '#';
-}
-
-if(isset($_SESSION['instagram'])) {
-    $instagramUrl = $_SESSION['instagram'];
-} else {
-    
-    $instagramUrl = '#';
-}
-
-
-if(isset($_SESSION['twitter'])) {
-    $twitterUrl = $_SESSION['twitter'];
-} else {
-    
-    $twitterUrl = '#';
-}
-
-if(isset($_SESSION['linkedin'])) {
-    $linkedinUrl = $_SESSION['linkedin'];
-} else {
-    
-    $linkedinUrl = '#';
-}
-
-
-
 ?>
+
 <body>
-    
     <div class="container-xxl position-relative bg-white d-flex p-0">
-        
-        
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light mt-2"  >
                 <div class="logo d-flex align-items-center ms-4 mb-4" >
                 <a href="index-worker-seeker.html" ><img src="../img/khedma_logo_f-02.svg" alt="" style="height: 5vh;">
-									</a>
-                   
+                                    </a>
+                
                 </div>
-                   
+                
             
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -116,7 +93,7 @@ if(isset($_SESSION['linkedin'])) {
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index-worker-seeker.html" class="nav-item nav-link active"><i class="fas fa-home icon me-2"></i>Home</a>
-                   
+                
                     <a href="workersearch.html" class="nav-item nav-link"><i class="fas fa-search icon me-2"></i>Worker Search</a>
                     <!-- <a href="notification-worker-seeker.html" class="nav-item nav-link"><i class="fas fa-bell icon me-2"></i>Notifications</a> -->
                     
@@ -125,7 +102,7 @@ if(isset($_SESSION['linkedin'])) {
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="settings1.html" class="dropdown-item">Profile Management</a>
                             <a href="settings1.html#security" class="dropdown-item">Security</a>
-                           
+                        
                         </div>
                     </div>
                     <a href="logout.php" class="nav-item nav-link"><i class="fas fa-sign-out-alt icon me-2"></i>Logout</a>
@@ -140,14 +117,14 @@ if(isset($_SESSION['linkedin'])) {
                 </div>
             </nav>
         </div>
-
+        <!-- Sidebar End -->
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="index-worker-seeker.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fas fa-home icon"></i></h2>
+                <a href="index-job-seeker.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
@@ -159,7 +136,7 @@ if(isset($_SESSION['linkedin'])) {
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Messages</span>
+                            <span class="d-none d-lg-inline-flex">Message</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
@@ -192,13 +169,13 @@ if(isset($_SESSION['linkedin'])) {
                                 </div>
                             </a>
                             <hr class="dropdown-divider">
-                            <a href="notifications-worker-seeker.html" class="dropdown-item text-center">See all messages</a>
+                            <a href="notifications.html" class="dropdown-item text-center">See all message</a>
                         </div>
                     </div>
-                    <!-- <div class="nav-item dropdown">
+                    <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fas fa-envelope icon me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Requests</span>
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notificatin</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
@@ -218,15 +195,15 @@ if(isset($_SESSION['linkedin'])) {
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item text-center">See all notifications</a>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src=" ../lesCINSgerants/<?=$_SESSION['manager_cin_image'] ?>" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex"><?=$_SESSION["full_name"]?></span>
+                            <img class="rounded-circle me-lg-2" src=" ../lesCINSworkers/<?=$_SESSION['cin_image'] ?>" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex"><?=$_SESSION["first_name"]." ".$_SESSION["last_name"]?></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="myprofile1.html" class="dropdown-item">My Profile</a>
-                            <a href="settings1.html" class="dropdown-item">Settings</a>
+                            <a href="myprofile.html" class="dropdown-item">My Profile</a>
+                            <a href="settings.html" class="dropdown-item">Settings</a>
                             <a href="logout.php" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
@@ -235,131 +212,167 @@ if(isset($_SESSION['linkedin'])) {
             <!-- Navbar End -->
 
 
+      
+            <!-- Form Start -->
+            <form method="post" action="genpdf.php">
+                <div class="container-fluid pt-4 px-4">
+                    <div class="row g-4">
+                        <div class="col-sm-12 col-xl-6">
+                            <div class="bg-light rounded h-100 p-4">
+                                <h6 class="mb-4">The Post Informations</h6>
+                                <div class="form-floating mb-3">
+                                    <input  class="form-control" placeholder="Enter your name" id="name" name="name">
+                                    <label for="age">Company name</label>
+                                </div>
+                                
+                                <div class="form-floating mb-3">
+                                    <input  class="form-control" placeholder="Enter your job" id="job" name="job">
+                                    <label for="english">Job</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input  class="form-control" placeholder="Enter your salary" id="salary" name="salary">
+                                    <label for="french">Salary</label>
+                                </div>
+                                
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" placeholder="Introduce yourself or give your profile here"
+                                        id="profile" name="profile" style="height: 150px;"></textarea>
+                                    <label for="profile">Description of the post</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <div class="form-container">
+                                        <label for="cin">Please drop your Company image in JPG format</label>
+                                        <input name="cin" type="file" class="form-control" id="cin-worker-seeker" accept=".pdf" required>
+                                        <small id="cin-job-seeker" class="form-text text-muted">Please upload your Company image in JPG format.</small>
+                                    </div>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary">ADD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- Form End -->
+<br>
+<br>
+
+            <!-- Form End -->
+
+
+            <footer
+            class="text-center text-lg-start text-white"
+            style="background-color: #e3e3e6"
+            >
+            <!-- Section: Social media -->
+            <section
+            class="d-flex justify-content-between p-4"
+            style="background-color: #009CFF"
+            >
+            <!-- Left -->
+            <div class="me-5">
+            <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+            </a>
+            </div>
+            <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class="">
+            <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold"><span class="khedma-word">خدمة</span></h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #009CFF; height: 2px"
+                />
+                <p>At <span class="khedma-word">خدمة</span>, we're dedicated to connecting people and businesses seamlessly. Our platform simplifies the job search process and empowers businesses to find the right talent. Join us in shaping the future of work.</p>
+            </div>
+            <!-- Grid column -->
 
             
 
-
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded p-4">
-                    <div class="wrapper">
-                        <div class="left">
-                            <img src=" ../lesCINSgerants/<?=$_SESSION['manager_cin_image'] ?>" 
-                            alt="user" width="100">
-                            <h4><?=$_SESSION["full_name"]?></h4>
-                            <p>Company'owner </p>
-                        </div>
-                        <div class="right">
-                            <div class="info">
-                                <h3>Information</h3>
-                                <div class="info_data">
-                                    <div class="data">
-                                        <h4>Email</h4>
-                                        <p><?= $_SESSION["email"] ?></p>
-                                    </div>
-                                    <div class="data">
-                                    <h4>Phone</h4>
-                                        <p><?=  $_SESSION["phone_number"] ?></p>
-                                </div>
-                                </div>
-                            </div>
-                        
-                        <div class="projects">
-                                
-                                <div class="projects_data">
-                                    <div class="data">
-                                        <h4>City</h4>
-                                        <p><?= $_SESSION["city"] ?></p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        
-                            <div class="social_media">
-                                <ul>
-                                    
-                                    <li><a href="<?= $facebookUrl ?>"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="<?= $twitterUrl ?>"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="<?= $instagramUrl ?>"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="<?= $linkedinUrl ?>"><i class="fab fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-
-
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #009CFF; height: 2px"
+                />
+            <p>
+                <a href="index-job-seeker.html" class="text-white">Home</a>
+            </p>
+            <p>
+                <a href="jobsearch.html" class="text-white">Opportunities</a>
+            </p>
+            <p>
+                <a href="resume.html" class="text-white">Resume Builder</a>
+            </p>
+            <p>
+                <a href="settings.html" class="text-white">Settings</a>
+            </p>
             </div>
-            <!-- Sales Chart End -->
+            <!-- Grid column -->
 
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fas fa-clock icon fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Posted Today</p>
-                                <h6 class="mb-0">34</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fas fa-thumbs-up icon fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Likes</p>
-                                <h6 class="mb-0">234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fas fa-envelope icon fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Requests</p>
-                                <h6 class="mb-0">74</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fas fa-eye icon fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Vues</p>
-                                <h6 class="mb-0">142</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #009CFF; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> INSAT, ARIANA, TUNISIE </p>
+            <p><i class="fas fa-envelope mr-3"></i> chakrounmino@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 216 52 519 087</p>
+            <p><i class="fas fa-print mr-3"></i> + 216 52 519 087</p>
             </div>
-            <!-- Sale & Revenue End -->
-
-
-           
-
-
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        </br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Grid column -->
             </div>
-            <!-- Footer End -->
+            <!-- Grid row -->
+            </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Copyright -->
+            <div
+            class="text-center p-3"
+            style="background-color: rgba(0, 0, 0, 0.2)"
+            >
+            © Copyright 2024  |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">larma.com</a>
+            
+            </div>
+            <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
         </div>
         <!-- Content End -->
 

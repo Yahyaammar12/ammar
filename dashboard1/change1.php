@@ -7,7 +7,6 @@ function changePassword($oldPassword, $newPassword) {
     // For example, you might compare the old password stored in your database with $oldPassword
     // If it matches, update the password with $newPassword
     $email =$_SESSION["email"];
-    // Dummy logic for demonstration
     $oldStoredPassword = $_SESSION["mot_de_passe"];
     if ($oldPassword === $oldStoredPassword) {
         // Update password logic goes here
@@ -22,10 +21,10 @@ function changePassword($oldPassword, $newPassword) {
             die("Connection error: " . mysqli_connect_errno());
     }
 
-    $query = "UPDATE registration SET mot_de_passe = '$newPassword' WHERE email = '$email'";
+    $query = "UPDATE reg_seeker SET mot_de_passe = '$newPassword' WHERE email = '$email'";
     $_SESSION["mot_de_passe"]=$newPassword;
     if (mysqli_query($conn, $query)) {
-        header("Location: index-job-seeker.html");
+        header("Location: index-worker-seeker.html");
     } else {
         echo "Error updating password: " . mysqli_error($conn);
     }
@@ -49,11 +48,11 @@ function changeEmail($oldEmail, $newEmail) {
             die("Connection error: " . mysqli_connect_errno());
     }
 
-    $query = "UPDATE registration SET email = '$newEmail' WHERE email = '$email'";
+    $query = "UPDATE reg_seeker SET email = '$newEmail' WHERE email = '$email'";
     $_SESSION["email"]=$newEmail;
    
     if (mysqli_query($conn, $query)) {
-        header("Location: index-job-seeker.html");
+        header("Location: index-worker-seeker.html");
     } else {
         echo "Error updating password: " . mysqli_error($conn);
     }
@@ -75,4 +74,3 @@ if (isset($_POST['change_email'])) {
 }
 
 ?>
-
