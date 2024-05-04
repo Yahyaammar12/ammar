@@ -71,53 +71,53 @@ session_start();
         <!-- Spinner End -->
 
 
-      <!-- Sidebar Start -->
-      <div class="sidebar pe-4 pb-3">
-        <nav class="navbar bg-light navbar-light mt-2"  >
-            <div class="logo d-flex align-items-center ms-4 mb-4" >
-            <a href="index-job-seeker.html" ><img src="../img/khedma_logo_f-02.svg" alt="" style="height: 5vh;">
-                                </a>
-               
-            </div>
-               
-        
-            <div class="d-flex align-items-center ms-4 mb-4">
-                <div class="position-relative">
-                <img class="rounded-circle" src="../lesCINSworkers/<?= $_SESSION['cin_image']?>" alt="" style="width: 40px; height: 40px;">
-                    <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light mt-2"  >
+                <div class="logo d-flex align-items-center ms-4 mb-4" >
+                <a href="index-worker-seeker.html" ><img src="../img/khedma_logo_f-02.svg" alt="" style="height: 5vh;">
+                                    </a>
+                
                 </div>
-                <div class="ms-3">
-                    <h6 class="mb-0"> <?=  $_SESSION['first_name']." ".$_SESSION['last_name']?></h6>
-                    <span>Worker</span>
+                
+            
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                    <img class="rounded-circle" src="../lesCINSgerants/<?= $_SESSION['manager_cin_image']?>" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0"> <?=  $_SESSION['full_name']?></h6>
+                        <span>Company</span>
+                    </div>
                 </div>
-            </div>
-            <div class="navbar-nav w-100">
-                <a href="index-job-seeker.html" class="nav-item nav-link "><i class="fas fa-home icon me-2"></i>Home</a>
-               
-                <a href="jobsearch.html" class="nav-item nav-link"><i class="fas fa-search icon me-2"></i>Opportunities</a>
-                <!-- <a href="notifications.html" class="nav-item nav-link "><i class="fas fa-bell icon me-2"></i>Notifications</a> -->
-                <a href="resume.html" class="nav-item nav-link active"><i class="far fa-file icon me-2"></i>Resume Builder</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-cog icon me-2"></i>Settings</a>
-                    <div class="dropdown-menu bg-transparent border-0">
-                        <a href="settings.html" class="dropdown-item">Profile Management</a>
-                        <a href="settings.html#security" class="dropdown-item">Security</a>
+                <div class="navbar-nav w-100">
+                    <a href="index-worker-seeker.html" class="nav-item nav-link active"><i class="fas fa-home icon me-2"></i>Home</a>
+                
+                    <a href="workersearch.html" class="nav-item nav-link"><i class="fas fa-search icon me-2"></i>Worker Search</a>
+                    <!-- <a href="notification-worker-seeker.html" class="nav-item nav-link"><i class="fas fa-bell icon me-2"></i>Notifications</a> -->
+                    
+                    <div class="nav-item dropdown">
+                        <a href="settings1.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-cog icon me-2"></i>Settings</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="settings1.html" class="dropdown-item">Profile Management</a>
+                            <a href="settings1.html#security" class="dropdown-item">Security</a>
                         
+                        </div>
                     </div>
-                </div>
-                <a href="logout.php" class="nav-item nav-link"><i class="fas fa-sign-out-alt icon me-2"></i>Logout</a>
-                <!-- <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                    <div class="dropdown-menu bg-transparent border-0">
+                    <a href="logout.php" class="nav-item nav-link"><i class="fas fa-sign-out-alt icon me-2"></i>Logout</a>
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <div class="dropdown-menu bg-transparent border-0">
 
-                        <a href="404.html" class="dropdown-item">404 Error</a>
-                        <a href="blank.html" class="dropdown-item">Blank Page</a>
-                    </div>
-                </div> -->
-            </div>
-        </nav>
-    </div>
-    <!-- Sidebar End -->
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="blank.html" class="dropdown-item">Blank Page</a>
+                        </div>
+                    </div> -->
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
 
         <!-- Content Start -->
         <div class="content">
@@ -214,64 +214,46 @@ session_start();
 
       
             <!-- Form Start -->
-<form method="post" action="genpdf.php">
-    <div class="container-fluid pt-4 px-4">
-        <div class="row g-4">
-            <div class="col-sm-12 col-xl-6">
-                <div class="bg-light rounded h-100 p-4">
-                    <h6 class="mb-4">Resume Informations</h6>
-                    <div class="form-floating mb-3">
-                        <input type="number" class="form-control" placeholder="Enter your age" id="age" name="age">
-                        <label for="age">Age</label>
+            <form method="post" action="genpdf.php">
+                <div class="container-fluid pt-4 px-4">
+                    <div class="row g-4">
+                        <div class="col-sm-12 col-xl-6">
+                            <div class="bg-light rounded h-100 p-4">
+                                <h6 class="mb-4">The Post Informations</h6>
+                                <div class="form-floating mb-3">
+                                    <input  class="form-control" placeholder="Enter your name" id="name" name="name">
+                                    <label for="age">Company name</label>
+                                </div>
+                                
+                                <div class="form-floating mb-3">
+                                    <input  class="form-control" placeholder="Enter your job" id="job" name="job">
+                                    <label for="english">Job</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input  class="form-control" placeholder="Enter your salary" id="salary" name="salary">
+                                    <label for="french">Salary</label>
+                                </div>
+                                
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" placeholder="Introduce yourself or give your profile here"
+                                        id="profile" name="profile" style="height: 150px;"></textarea>
+                                    <label for="profile">Description of the post</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <div class="form-container">
+                                        <label for="cin">Please drop your Company image in JPG format</label>
+                                        <input name="cin" type="file" class="form-control" id="cin-worker-seeker" accept=".pdf" required>
+                                        <small id="cin-job-seeker" class="form-text text-muted">Please upload your Company image in JPG format.</small>
+                                    </div>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary">ADD</button>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="form-floating mb-3">
-                        <select class="form-select" name="english_proficiency">
-                            <option value="basic">Basic</option>
-                            <option value="Not A Speaker">Not A Speaker</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                            <option value="fluent">Fluent</option>
-                        </select>
-                        <label for="english">English</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <select class="form-select" name="french_proficiency">
-                            <option value="basic">Basic</option>
-                            <option value="Not A Speaker">Not A Speaker</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                            <option value="fluent">Fluent</option>
-                        </select>
-                        <label for="french">French</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <select class="form-select" name="arabic_proficiency">
-                            <option value="basic">Basic</option>
-                            <option value="Not A Speaker">Not A Speaker</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                            <option value="fluent">Fluent</option>
-                        </select>
-                        <label for="arabic">Arabic</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="Introduce yourself or give your profile here"
-                            id="profile" name="profile" style="height: 150px;"></textarea>
-                        <label for="profile">Profile</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="Put your skills here"
-                            id="skills" name="skills" style="height: 150px;"></textarea>
-                        <label for="skills">Skills</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Generate</button>
                 </div>
-            </div>
-        </div>
-    </div>
-</form>
-<!-- Form End -->
+            </form>
+            <!-- Form End -->
 <br>
 <br>
 
