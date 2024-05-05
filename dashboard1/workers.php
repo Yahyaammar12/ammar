@@ -2,7 +2,7 @@
 
   require_once 'connection.php';
 
-  $sql = "SELECT * FROM job_announce";
+  $sql = "SELECT * FROM profiles";
   $all_product = $conn->query($sql);
 
 
@@ -128,10 +128,13 @@
                 <!-- Spinner End -->
 
 
-                <div class="sidebar pe-4 pb-3">
+       
+        
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light mt-2"  >
                 <div class="logo d-flex align-items-center ms-4 mb-4" >
-                <a href="index-job-seeker.html" ><img src="../img/khedma_logo_f-02.svg" alt="" style="height: 5vh;">
+                <a href="index-worker-seeker.html" ><img src="../img/khedma_logo_f-02.svg" alt="" style="height: 5vh;">
 									</a>
                    
                 </div>
@@ -139,25 +142,26 @@
             
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                    <img class="rounded-circle" src="../lesCINSworkers/<?= $_SESSION['cin_image']?>" alt="" style="width: 40px; height: 40px;">
+                    <img class="rounded-circle" src="../lesCINSgerants/<?= $_SESSION['manager_cin_image']?>" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
                         <h6 class="mb-0"> <?=  $_SESSION['first_name']." ".$_SESSION['last_name']?></h6>
-                        <span>Worker</span>
+                        <span>Company'Manager</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index-job-seeker.html" class="nav-item nav-link "><i class="fas fa-home icon me-2"></i>Home</a>
+                    <a href="index-worker-seeker.html" class="nav-item nav-link "><i class="fas fa-home icon me-2"></i>Home</a>
                    
-                    <a href="home.php" class="nav-item nav-link active"><i class="fas fa-search icon me-2"></i>Opportunities</a>
-                    <!-- <a href="notifications.html" class="nav-item nav-link"><i class="fas fa-bell icon me-2"></i>Notifications</a> -->
-                    <a href="resume.html" class="nav-item nav-link"><i class="far fa-file icon me-2"></i>Resume Builder</a>
+                    <a href="workers.php" class="nav-item nav-link active"><i class="fas fa-search icon me-2"></i>Workers Market</a>
+                    <a href="add-company-job.html" class="nav-item nav-link"><i class="fas fa-search icon me-2"></i>Add Announce</a>
+                    
                     <div class="nav-item dropdown">
-                        <a href="settings.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-cog icon me-2"></i>Settings</a>
+                        <a href="settings1.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-cog icon me-2"></i>Settings</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="settings.html" class="dropdown-item">Profile Management</a>
-                            <a href="settings.html#security" class="dropdown-item">Security</a>
+                            <a href="settings1.html" class="dropdown-item">Profile Management</a>
+                            <a href="settings1.html#security" class="dropdown-item">Security</a>
+                           
                         </div>
                     </div>
                     <a href="logout.php" class="nav-item nav-link"><i class="fas fa-sign-out-alt icon me-2"></i>Logout</a>
@@ -179,7 +183,7 @@
                 <div class="content">
                     <!-- Navbar Start -->
                        <!-- Navbar Start -->
-            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                       <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
                 <a href="index-worker-seeker.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fas fa-home icon"></i></h2>
                 </a>
@@ -255,17 +259,19 @@
                     </div> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="../lesCINSworkers/<?= $_SESSION['cin_image']?>" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex"><?=$_SESSION["first_name"].$_SESSION["last_name"]?></span>
+                            <img class="rounded-circle me-lg-2" src=" ../lesCINSgerants/<?=$_SESSION['manager_cin_image'] ?>" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex"><?=  $_SESSION['first_name']." ".$_SESSION['last_name']?></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                         
+                           
                             <a href="settings1.html" class="dropdown-item">Settings</a>
                             <a href="logout.php" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
             </nav>
+            <!-- Navbar End -->
+
                     <!-- Navbar End -->
 
                     
@@ -276,8 +282,8 @@
                     <section id="explore" class="explore p-5">
                         <div class="container">
                             <div class="section-header">
-                                <h2> Opportunities </h2>
-                                <p>Explore New experience</p>
+                                <h2> Workers </h2>
+                                <p>Explore New Workers</p>
                             </div><!--/.section-header-->
                             <div class="explore-content">
                         <div class="row">
@@ -289,28 +295,44 @@
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
                              
-                                        <img src="./<?php echo $row["company_logo"]; ?>" alt="explore image">
+                                        <img src="../lesCINSworkers/<?php echo $row["photo"]; ?>" alt="explore image">
                                         <div class="single-explore-img-info">
                                             <button onclick="window.location.href='#'">best rated</button>
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-1">
-                                        <h2><a href="#"><?php echo $row["company_name"];  ?></a></h2>
+                                        <h2><a href="#"><?php echo $row["first_name"]." ".$row["last_name"];  ?></a></h2>
                                         <p class="explore-rating-price">
                                             <span class="explore-rating">5.0</span>
                                             <a href="#"> 10 ratings</a> 
                                             <span class="explore-price-box">
-                                                Salary : 
-                                                <span class="explore-price"><?php echo $row["salary"]; ?> TND</b></span>
+                                                Age : 
+                                                <span class="explore-price"><?php echo $row["age"]; ?> </b></span>
                                             </span>
                                             <br>
                                             <br>
-                                            Poste Avaible :
-                                             <?php echo $row["job_name"]; ?>
+                                            Education :
+                                             <?php echo $row["education"]; ?>
                                              <br>
                                              <br>
-                                             Description:
-                                             <?php echo $row["description"]; ?>
+                                             Skills:
+                                             <?php echo $row["skills"]; ?>
+                                             <br>
+                                            <br>
+                                            Experiences  :
+                                             <?php echo $row["experiences"]; ?>
+                                             <br>
+                                             <br>
+                                             Email
+                                             <?php echo $row["email"]; ?>
+                                             <br>
+                                             <br>
+                                             Appuer pour avoir le CV :
+                                             <br>
+                                             <br>
+                                             <a href="telechargementcv.php?cv=<?php echo urlencode($row["cv"]); ?>" target="_blank"class="btn btn-primary" >Télécharger le cv</a>
+
+                                             
                                         </p>
                                         
                                         <div class="explore-open-close-part">

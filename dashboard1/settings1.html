@@ -88,16 +88,14 @@ session_start();
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0"> <?=  $_SESSION['full_name']?></h6>
-                        <span>Company</span>
+                        <h6 class="mb-0"> <?=  $_SESSION['first_name']." ".$_SESSION['last_name']?></h6>
+                        <span>Company's Manager</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index-worker-seeker.html" class="nav-item nav-link "><i class="fas fa-home icon me-2"></i>Home</a>
-                   
-                    <a href="workersearch.html" class="nav-item nav-link"><i class="fas fa-search icon me-2"></i>Worker Search</a>
-                    <!-- <a href="notification-worker-seeker.html" class="nav-item nav-link"><i class="fas fa-bell icon me-2"></i>Notifications</a> -->
-
+                    <a href="workers.php" class="nav-item nav-link "><i class="fas fa-search icon me-2"></i>Workers Market</a>
+              
                     <a href="add-company-job.html" class="nav-item nav-link"><i class="fas fa-search icon me-2"></i>Add Announce</a>
                     
                     <div class="nav-item dropdown">
@@ -201,10 +199,10 @@ session_start();
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src=" ../lesCINSgerants/<?=$_SESSION['manager_cin_image'] ?>" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex"><?=$_SESSION["full_name"]?></span>
+                            <span class="d-none d-lg-inline-flex"><?=  $_SESSION['first_name']." ".$_SESSION['last_name']?></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="myprofile1.html" class="dropdown-item">My Profile</a>
+                          
                             <a href="settings1.html" class="dropdown-item">Settings</a>
                             <a href="logout.php" class="dropdown-item">Log Out</a>
                         </div>
