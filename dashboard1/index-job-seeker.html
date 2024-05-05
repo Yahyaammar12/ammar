@@ -11,8 +11,8 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="../img/favicon-32x32.png" rel="icon">
-
+    <link href="img/favicon.ico" rel="icon">
+    <link href="css/styles.css" rel="stylesheet">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,9 +51,12 @@
 <!--slick.css-->
 <link rel="stylesheet" href="./css/slick.css">
 <link rel="stylesheet" href="./css/slick-theme.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
 <!--style.css-->
 <link rel="stylesheet" href="./css/stylev2.css">
+
 
 <!--responsive.css-->
 
@@ -86,7 +89,37 @@
 </head>
 <?php
 session_start();
+if(isset($_SESSION['facebook'])) {
+    $facebookUrl = $_SESSION['facebook'];
+} else {
+    // Set $facebookUrl to '#' if $_SESSION['facebook'] is not set
+    $facebookUrl = '#';
+}
+
+if(isset($_SESSION['instagram'])) {
+    $instagramUrl = $_SESSION['instagram'];
+} else {
     
+    $instagramUrl = '#';
+}
+
+
+if(isset($_SESSION['twitter'])) {
+    $twitterUrl = $_SESSION['twitter'];
+} else {
+    
+    $twitterUrl = '#';
+}
+
+if(isset($_SESSION['linkedin'])) {
+    $linkedinUrl = $_SESSION['linkedin'];
+} else {
+    
+    $linkedinUrl = '#';
+}
+
+
+
 ?>
 <body>
     
@@ -234,6 +267,63 @@ session_start();
             <!-- Navbar End -->
 
 
+             <!-- Sales Chart Start -->
+             <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded p-4">
+                    <div class="wrapper">
+                        <div class="left">
+                            <img src=" ../lesCINSworkers/<?=$_SESSION['cin_image'] ?>" 
+                            alt="user" width="100">
+                            <h4><?=$_SESSION["first_name"]." ".$_SESSION["last_name"] ?></h4>
+                            <p style="color: whitesmoke;">Worker </p>
+                        </div>
+                        <div class="right">
+                            <div class="info">
+                                <h3>Information</h3>
+                                <div class="info_data">
+                                    <div class="data">
+                                        <h4>Email</h4>
+                                        <p><?= $_SESSION["email"] ?></p>
+                                    </div>
+                                    <div class="data">
+                                    <h4>Phone</h4>
+                                        <p><?=  $_SESSION["phone_number"] ?></p>
+                                </div>
+                                </div>
+                            </div>
+                        
+                        <div class="projects">
+                                
+                                <div class="projects_data">
+                                    <div class="data">
+                                        <h4>City</h4>
+                                        <p><?= $_SESSION["city"] ?></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        
+                            <div class="social_media">
+                                <ul>
+                                    
+                                    <li><a href="<?= $facebookUrl ?>"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="<?= $twitterUrl ?>"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="<?= $instagramUrl ?>"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="<?= $linkedinUrl ?>"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+            <!-- Sales Chart End -->
+
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -276,430 +366,6 @@ session_start();
                 </div>
             </div>
             <!-- Sale & Revenue End -->
-<!--explore start -->
-<br>
-<section id="explore" class="explore">
-    <div class="container">
-        <div class="section-header">
-            <h2> Offers </h2>
-            <p>Explore New experience</p>
-        </div><!--/.section-header-->
-        <div class="explore-content">
-            <div class="row">
-                <div class=" col-md-4 col-sm-6">
-                    <div class="single-explore-item">
-                        <div class="single-explore-img">
-                            <img src="./img/aiotech.jpg" alt="explore image">
-                            <div class="single-explore-img-info">
-                                <button onclick="window.location.href='#'">best rated</button>
-                            </div>
-                        </div>
-                        <div class="single-explore-txt bg-theme-1">
-                            <h2><a href="#">AIO TECHNOLOGY</a></h2>
-                            <p class="explore-rating-price">
-                                <span class="explore-rating">5.0</span>
-                                <a href="#"> 10 ratings</a> 
-                                <span class="explore-price-box">
-                                    form
-                                    <span class="explore-price">500$-1000$ salary</span>
-                                </span>
-                                 <a href="#">TECHNICIAN</a>
-                            </p>
-                            <div class="explore-person">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <div class="explore-person-img">
-                                            <a href="#">
-                                                <img src="./img/aiotech.jpg" alt="explore person">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-11">
-                                        <p>
-                                           WE WANT A GOOD TECHNICIAN ...
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explore-open-close-part">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <button class="close-btn" onclick="window.location.href='#'">unavailable</button>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="explore-map-icon">
-                                            <a href="#"><i data-feather="map-pin"></i></a>
-                                            <a href="#"><i data-feather="upload"></i></a>
-                                            <a href="#"><i data-feather="heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-explore-item">
-                        <div class="single-explore-img">
-                            <img src="./img/1631344630799.jpg" alt="explore image">
-                            <div class="single-explore-img-info">
-                                <button onclick="window.location.href='#'">featured</button>
-                            </div>
-                        </div>
-                        <div class="single-explore-txt bg-theme-2">
-                            <h2><a href="#">NG-Multimedia</a></h2>
-                            <p class="explore-rating-price">
-                                <span class="explore-rating">4.5</span>
-                                <a href="#"> 8 ratings</a> 
-                                <span class="explore-price-box">
-                                    form
-                                    <span class="explore-price">600$-1200$ salary</span>
-                                </span>
-                                 <a href="#">ENGINEER</a>
-                            </p>
-                            <div class="explore-person">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <div class="explore-person-img">
-                                            <a href="#">
-                                                <img src="./img/NG-INFO.jpg" alt="explore person">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-11">
-                                        <p>
-                                            Computer support and services in Tunis.... 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explore-open-close-part">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <button class="close-btn open-btn" onclick="window.location.href='#'">available</button>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="explore-map-icon">
-                                            <a href="#"><i data-feather="map-pin"></i></a>
-                                            <a href="#"><i data-feather="upload"></i></a>
-                                            <a href="#"><i data-feather="heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-explore-item">
-                        <div class="single-explore-img">
-                            <img src="./img/1200px-DoubleClick_Logo.svg.png" alt="explore image">
-                            <div class="single-explore-img-info">
-                                <button onclick="window.location.href='#'">best rated</button>
-
-                            </div>
-                        </div>
-                        <div class="single-explore-txt bg-theme-3">
-                            <h2><a href="#">DOUBLE CLICK</a></h2>
-                            <p class="explore-rating-price">
-                                <span class="explore-rating">5.0</span>
-                                <a href="#"> 15 ratings</a> 
-                                <span class="explore-price-box">
-                                    form
-                                    <span class="explore-price">1k$-1,5k$ salary</span>
-                                </span>
-                                 <a href="#">MARKETING</a>
-                            </p>
-                            <div class="explore-person">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <div class="explore-person-img">
-                                            <a href="#">
-                                                <img src="./img/1200px-DoubleClick_Logo.svg.png" alt="explore person">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-11">
-                                        <p>
-                                            Computer store in ARIANA, Offers repair services · Offers same-day delivery.... 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explore-open-close-part">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <button class="close-btn open-btn" onclick="window.location.href='#'">available</button>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="explore-map-icon">
-                                            <a href="#"><i data-feather="map-pin"></i></a>
-                                            <a href="#"><i data-feather="upload"></i></a>
-                                            <a href="#"><i data-feather="heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-md-4 col-sm-6">
-                    <div class="single-explore-item">
-                        <div class="single-explore-img">
-                            <img src="./img/TECHNOSOFT-LOGO-1 - Copy.png" alt="explore image">
-                            <div class="single-explore-img-info">
-                                <button onclick="window.location.href='#'">most view</button>
-                                
-                            </div>
-                        </div>
-                        <div class="single-explore-txt bg-theme-4">
-                            <h2><a href="#">TechnoSoft</a></h2>
-                            <p class="explore-rating-price">
-                                <span class="explore-rating">5.0</span>
-                                <a href="#"> 10 ratings</a> 
-                                <span class="explore-price-box">
-                                    form
-                                    <span class="explore-price">2,5k$-3k$</span>
-                                </span>
-                                 <a href="#">ENGINEER</a>
-                            </p>
-                            <div class="explore-person">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <div class="explore-person-img">
-                                            <a href="#">
-                                                <img src="./img/TECHNOSOFT-LOGO-1 - Copy.png" alt="explore person">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-11">
-                                        <p>
-                                            Software Company en ARIANA , leader en Logiciels de GMAO GPAO GEID en TUNISIE et commence à s'installer à l'étranger..... 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explore-open-close-part">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <button class="close-btn open-btn" onclick="window.location.href='#'">Available</button>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="explore-map-icon">
-                                            <a href="#"><i data-feather="map-pin"></i></a>
-                                            <a href="#"><i data-feather="upload"></i></a>
-                                            <a href="#"><i data-feather="heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-explore-item">
-                        <div class="single-explore-img">
-                            <img src="./img/mark.webp" alt="explore image">
-                            <div class="single-explore-img-info">
-                                <button onclick="window.location.href='#'">most view</button>
-                                
-                            </div>
-                        </div>
-                        <div class="single-explore-txt bg-theme-2">
-                            <h2><a href="#">SMARTEK SERVICES</a></h2>
-                            <p class="explore-rating-price">
-                                <span class="explore-rating">4.2</span>
-                                <a href="#"> 8 ratings</a> 
-                                <span class="explore-price-box">
-                                    form
-                                    <span class="explore-price">700$-1200$ salary</span>
-                                </span>
-                                 <a href="#">Customer Service</a>
-                            </p>
-                            <div class="explore-person">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <div class="explore-person-img">
-                                            <a href="#">
-                                                <img src="./img/mark.webp" alt="explore person">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-11">
-                                        <p>
-                                            Smatek.services, Tunis, Tunisia..... 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explore-open-close-part">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <button class="close-btn open-btn" onclick="window.location.href='#'">Available</button>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="explore-map-icon">
-                                            <a href="#"><i data-feather="map-pin"></i></a>
-                                            <a href="#"><i data-feather="upload"></i></a>
-                                            <a href="#"><i data-feather="heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-explore-item">
-                        <div class="single-explore-img">
-                            <img src="./img/final_600xgeiser.webp" alt="explore image">
-                            <div class="single-explore-img-info">
-                                <button onclick="window.location.href='#'">best rated</button>
-                          
-                            </div>
-                        </div>
-                        <div class="single-explore-txt bg-theme-5">
-                            <h2><a href="#">Société Générale Informatique et Services - Geiserr</a></h2>
-                            <p class="explore-rating-price">
-                                <span class="explore-rating">5.5</span>
-                                <a href="#"> 15 ratings</a> 
-                                <span class="explore-price-box">
-                                    form
-                                    <span class="explore-price">5k$-6k$ salary</span>
-                                </span>
-                                 <a href="#">ENGINEER</a>
-                            </p>
-                            <div class="explore-person">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <div class="explore-person-img">
-                                            <a href="#">
-                                                <img src="./img/final_600xgeiser.webp" alt="explore person">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-11">
-                                        <p>
-                                            Services de securité informatiques .... 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="explore-open-close-part">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <button class="close-btn" onclick="window.location.href='#'">Unavailable</button>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="explore-map-icon">
-                                            <a href="#"><i data-feather="map-pin"></i></a>
-                                            <a href="#"><i data-feather="upload"></i></a>
-                                            <a href="#"><i data-feather="heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/.container-->
-
-</section><!--/.explore-->
-<!--explore end -->
-
-<!-- <section class="featured-product section-padding">
-    <div class="container">
-        <div class="row">
-            
-            <div class="col-12 text-center">
-                <h2 class="mb-5">Featured Products</h2>
-            </div>
-
-            <div class="col-lg-4 col-12 mb-3">
-                <div class="product-thumb">
-                    <a href="product-detail.html">
-                        <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="">
-                    </a>
-
-                    <div class="product-top d-flex">
-                        <span class="product-alert me-auto">New Arrival</span>
-
-                        <a href="#" class="bi-heart-fill product-icon"></a>
-                    </div>
-
-                    <div class="product-info d-flex">
-                        <div>
-                            <h5 class="product-title mb-0">
-                                <a href="product-detail.html" class="product-title-link">Tree pot</a>
-                            </h5>
-
-                            <p class="product-p">Original package design from house</p>
-                        </div>
-
-                        <small class="product-price text-muted ms-auto mt-auto mb-5">$25</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-12 mb-3">
-                <div class="product-thumb">
-                    <a href="product-detail.html">
-                        <img src="images/product/jordan-nix-CkCUvwMXAac-unsplash.jpeg" class="img-fluid product-image" alt="">
-                    </a>
-
-                    <div class="product-top d-flex">
-                        <span class="product-alert">Low Price</span>
-
-                        <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-                    </div>
-
-                    <div class="product-info d-flex">
-                        <div>
-                            <h5 class="product-title mb-0">
-                                <a href="product-detail.html" class="product-title-link">Fashion Set</a>
-                            </h5>
-
-                            <p class="product-p">Costume Package</p>
-                        </div>
-
-                        <small class="product-price text-muted ms-auto mt-auto mb-5">$35</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-12">
-                <div class="product-thumb">
-                    <a href="product-detail.html">
-                        <img src="images/product/nature-zen-3Dn1BZZv3m8-unsplash.jpeg" class="img-fluid product-image" alt="">
-                    </a>
-
-                    <div class="product-top d-flex">
-                        <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-                    </div>
-
-                    <div class="product-info d-flex">
-                        <div>
-                            <h5 class="product-title mb-0">
-                                <a href="product-detail.html" class="product-title-link">Juice Drinks</a>
-                            </h5>
-
-                            <p class="product-p">Nature made another world</p>
-                        </div>
-
-                        <small class="product-price text-muted ms-auto mt-auto mb-5">$45</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 text-center">
-                <a href="products.html" class="view-all">View All Products</a>
-            </div>
-
-        </div>
-    </div>
-</section> -->
 
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
@@ -743,24 +409,50 @@ session_start();
 <br>
 <!-- Testimonial End -->
 
-           
+<div class="blockcode">
+    
+    <footer class="shadow" style="background-color: rgb(238, 235, 235);">
+      <div
+        class="d-flex justify-content-between align-items-center mx-auto py-4 flex-wrap"
+        style="width: 80%"
+      >
+        <a href="/#" class="d-flex align-items-center p-0 text-dark">
+          <img alt="logo" src="../img/khedma_logo_f-02.svg" width="80px" />
+          <!-- <span class="ms-4 h5 font-weight-bold">Devwares</span> -->
+        </a>
+        <small>&copy; © Copyright 2024  |  All Rights Reserved by <a  href="https://www.wpthemesgrid.com" target="_blank"><small>larma.com</small></a></small>
+        <div>
+          <button class="btn btn-dark btn-flat p-2">
+            <i class="fab fa-facebook"></i>
+          </button>
+          <button class="btn btn-dark btn-flat p-2">
+            <i class="fab fa-twitter"></i>
+          </button>
+          <button class="btn btn-dark btn-flat p-2">
+            <i class="fab fa-instagram"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+    <br>
+    <br>
+    <br>
+  </div>
 
-            <footer
+            <!-- <footer
             class="text-center text-lg-start text-white"
             style="background-color: #e3e3e6"
             >
-            <!-- Section: Social media -->
+        
             <section
             class="d-flex justify-content-between p-4"
             style="background-color: #009CFF"
             >
-            <!-- Left -->
+         
             <div class="me-5">
             <span>Get connected with us on social networks:</span>
             </div>
-            <!-- Left -->
-
-            <!-- Right -->
+            
             <div>
             <a href="" class="text-white me-4">
             <i class="fab fa-facebook-f"></i>
@@ -781,18 +473,16 @@ session_start();
             <i class="fab fa-github"></i>
             </a>
             </div>
-            <!-- Right -->
+          
             </section>
-            <!-- Section: Social media -->
-
-            <!-- Section: Links  -->
+          
             <section class="">
             <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
+           
             <div class="row mt-3">
-            <!-- Grid column -->
+           
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
+          
             <h6 class="text-uppercase fw-bold"><span class="khedma-word">خدمة</span></h6>
             <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
@@ -800,13 +490,9 @@ session_start();
                 />
                 <p>At <span class="khedma-word">خدمة</span>, we're dedicated to connecting people and businesses seamlessly. Our platform simplifies the job search process and empowers businesses to find the right talent. Join us in shaping the future of work.</p>
             </div>
-            <!-- Grid column -->
-
-            
-
-            <!-- Grid column -->
+        
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
+            
             <h6 class="text-uppercase fw-bold">Useful links</h6>
             <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
@@ -825,11 +511,9 @@ session_start();
                 <a href="settings.html" class="text-white">Settings</a>
             </p>
             </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
+           
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
+            
             <h6 class="text-uppercase fw-bold">Contact</h6>
             <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
@@ -840,14 +524,12 @@ session_start();
             <p><i class="fas fa-phone mr-3"></i> + 216 52 519 087</p>
             <p><i class="fas fa-print mr-3"></i> + 216 52 519 087</p>
             </div>
-            <!-- Grid column -->
+           
             </div>
-            <!-- Grid row -->
+       =
             </div>
             </section>
-            <!-- Section: Links  -->
 
-            <!-- Copyright -->
             <div
             class="text-center p-3"
             style="background-color: rgba(0, 0, 0, 0.2)"
@@ -855,9 +537,9 @@ session_start();
             © Copyright 2024  |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">larma.com</a>
             
             </div>
-            <!-- Copyright -->
-            </footer>
-            <!-- Footer -->
+      
+            </footer> -->
+            
         </div>
         <!-- Content End -->
 
@@ -879,7 +561,7 @@ session_start();
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    
+    <script src="js/main1.js"></script>
     <script>
         feather.replace();
     </script>
