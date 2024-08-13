@@ -104,7 +104,6 @@ if (isset($_SESSION['last_name'])) {
 													
 												
 											</li>
-											<li ><a href="./category.html">Categories </a></li>
 											<li><a href="index.html">electro menager <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li >

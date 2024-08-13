@@ -104,34 +104,33 @@ if (isset($_SESSION['last_name'])) {
 													
 												
 											</li>
-											<li ><a href="./category.html">Categories </a></li>
 											<li><a href="index.html">electro menager <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li >
-														<li><a href="./petit.html">petit electro </a> </li>
+														<li><a href="./petit.php">petit electro </a> </li>
 													
 														<li >
-															<li><a href="./grand.html">grand electro </a> </li>
+															<li><a href="./grand.php">grand electro </a> </li>
 														
 														<li >
 												</ul>
 											</li>
 											<li><a href="#">meubles <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
-													<li><a href="./category.html">chaise plastique </a> </li>
+													<li><a href="./chaise plastique.php">chaise plastique </a> </li>
 													
 													
 													<li >
-														<li><a href="./salon plastique.html">salon plastique </a> </li>
+														<li><a href="./salon plastique.php">salon plastique </a> </li>
 													
 													<li >
 														<li >
-															<li><a href="./chambre.html">chambre a coucher </a> </li>
+															<li><a href="./chambre.php">chambre a coucher </a> </li>
 														
 														<li >
 													 
 													<li >
-														<li><a href="./salon plastique.html">burautique </a> </li>
+														<li><a href="./bureautique.php">burautique </a> </li>
 													
 													<li >
 													</ul>
